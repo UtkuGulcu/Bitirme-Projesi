@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2e7facabc9ce03348a476ba0fc648bfb
+guid: 49b2cc5c7a5a09c419ea670a6e6557f1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle Shoot Legs Only_0
+      name: Walking While Aiming_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 17
-        height: 13
+        width: 33
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c74996b3b529bd47a2ab130729b5efd
-      internalID: -551303233
+      spriteID: 8f27411dff8e01a45a5a84ba51ab40a1
+      internalID: 2028585107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle Shoot Legs Only_1
+      name: Walking While Aiming_1
       rect:
         serializedVersion: 2
-        x: 17
+        x: 33
         y: 0
-        width: 17
-        height: 13
+        width: 33
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cda4b8ce41db8ea4288f9bdf69b8bcb9
-      internalID: -322437116
+      spriteID: 4ad406845bb81fc4589a669dbab855af
+      internalID: 581293539
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle Shoot Legs Only_2
+      name: Walking While Aiming_2
       rect:
         serializedVersion: 2
-        x: 34
+        x: 66
         y: 0
-        width: 17
-        height: 13
+        width: 33
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b76106a230dae6e469229ab1600cefb8
-      internalID: 660161108
+      spriteID: 6eb72b5939f6a8c40a3ebfbef7fa9a6c
+      internalID: 1762685466
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle Shoot Legs Only_3
+      name: Walking While Aiming_3
       rect:
         serializedVersion: 2
-        x: 51
+        x: 99
         y: 0
-        width: 17
-        height: 13
+        width: 33
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b42a71dcb35ccb04db68b90bd9b30120
-      internalID: -995138152
+      spriteID: fb8fe431f78cb4a42a69670aed8a294a
+      internalID: -744899912
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle Shoot Legs Only_4
+      name: Walking While Aiming_4
       rect:
         serializedVersion: 2
-        x: 68
+        x: 132
         y: 0
-        width: 17
-        height: 13
+        width: 33
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ca6d2ee8d1ef9443984a7509f3cfc4e
-      internalID: -1489919957
+      spriteID: fb73d9073e5b139408b4eb1d4cc502de
+      internalID: 1734191892
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle Shoot Legs Only_5
+      name: Walking While Aiming_5
       rect:
         serializedVersion: 2
-        x: 85
+        x: 165
         y: 0
-        width: 17
-        height: 13
+        width: 33
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce4a9c1d80e38f84b895b834fdd99d4c
-      internalID: -1127871620
+      spriteID: 0d62c64961a84aa44b04727e6e32ba60
+      internalID: 1796172244
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle Shoot Legs Only_6
+      name: Walking While Aiming_6
       rect:
         serializedVersion: 2
-        x: 102
+        x: 198
         y: 0
-        width: 17
-        height: 13
+        width: 33
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a73dd03508bf70846b88949f9ac5cf25
-      internalID: 801155621
+      spriteID: 5405d6e565a25c1449fb9da426f549ff
+      internalID: -2009469039
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle Shoot Legs Only_7
+      name: Walking While Aiming_7
       rect:
         serializedVersion: 2
-        x: 119
+        x: 231
         y: 0
-        width: 17
-        height: 13
+        width: 33
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,29 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c553a748ad703a4a995d9aef86e3088
-      internalID: 1322082762
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle Shoot Legs Only_8
-      rect:
-        serializedVersion: 2
-        x: 136
-        y: 0
-        width: 17
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d1c0df5b3cdfff0449219e08bab7e3ab
-      internalID: 1587621253
+      spriteID: 8892d2789fc4d464fa0f33f49f58d983
+      internalID: 84367795
       vertices: []
       indices: 
       edges: []
@@ -309,15 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Idle Shoot Legs Only_0: -551303233
-      Idle Shoot Legs Only_1: -322437116
-      Idle Shoot Legs Only_2: 660161108
-      Idle Shoot Legs Only_3: -995138152
-      Idle Shoot Legs Only_4: -1489919957
-      Idle Shoot Legs Only_5: -1127871620
-      Idle Shoot Legs Only_6: 801155621
-      Idle Shoot Legs Only_7: 1322082762
-      Idle Shoot Legs Only_8: 1587621253
+      Walking While Aiming_0: 2028585107
+      Walking While Aiming_1: 581293539
+      Walking While Aiming_2: 1762685466
+      Walking While Aiming_3: -744899912
+      Walking While Aiming_4: 1734191892
+      Walking While Aiming_5: 1796172244
+      Walking While Aiming_6: -2009469039
+      Walking While Aiming_7: 84367795
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 40e26ab32af8f0e43bffc5ba0f8b627b
+guid: a483f26520a1540458675d4ef5750435
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Smoking Man Walking While Shooting Upper Body Only_0
+      name: Idle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 18
+        width: 26
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9a6cfe2ff96c56439911185f8490b69
-      internalID: 842446365
+      spriteID: 3dabb4aa9e4e3184fbc66b02c8ce6f51
+      internalID: -307677271
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Smoking Man Walking While Shooting Upper Body Only_1
+      name: Idle_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 26
         y: 0
-        width: 32
-        height: 18
+        width: 26
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 440e625cbcf030e4e90cb9308c412a6a
-      internalID: 2032508545
+      spriteID: 07f758a98cb03ac4a8f9e63ba43479d9
+      internalID: 586982176
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Smoking Man Walking While Shooting Upper Body Only_2
+      name: Idle_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 52
         y: 0
-        width: 32
-        height: 18
+        width: 26
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d63808b65ae65c42b97f71d2e3d88cf
-      internalID: -1563121930
+      spriteID: aaf8db80eea259440a78bd91fdd54076
+      internalID: -1598965869
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Smoking Man Walking While Shooting Upper Body Only_3
+      name: Idle_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 78
         y: 0
-        width: 32
-        height: 18
+        width: 26
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,92 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a5fc9a5034d3204195fcb5fbc30c5bf
-      internalID: -509945082
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Smoking Man Walking While Shooting Upper Body Only_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb7c3ab7cb8aaae43a57f125b83f5103
-      internalID: -84758986
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Smoking Man Walking While Shooting Upper Body Only_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 96f3cd4399b429d4d9bc7910afbe73de
-      internalID: -414957769
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Smoking Man Walking While Shooting Upper Body Only_6
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a4303c08a230aec448e9696dada48d8c
-      internalID: -512640506
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Smoking Man Walking While Shooting Upper Body Only_7
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 0
-        width: 32
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4fcbb8528f82b1c4689353274a10746d
-      internalID: -376632378
+      spriteID: fe61a410ec5d2fd4784f69c154e57573
+      internalID: 1715862643
       vertices: []
       indices: 
       edges: []
@@ -288,14 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Smoking Man Walking While Shooting Upper Body Only_0: 842446365
-      Smoking Man Walking While Shooting Upper Body Only_1: 2032508545
-      Smoking Man Walking While Shooting Upper Body Only_2: -1563121930
-      Smoking Man Walking While Shooting Upper Body Only_3: -509945082
-      Smoking Man Walking While Shooting Upper Body Only_4: -84758986
-      Smoking Man Walking While Shooting Upper Body Only_5: -414957769
-      Smoking Man Walking While Shooting Upper Body Only_6: -512640506
-      Smoking Man Walking While Shooting Upper Body Only_7: -376632378
+      Idle_0: -307677271
+      Idle_1: 586982176
+      Idle_2: -1598965869
+      Idle_3: 1715862643
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

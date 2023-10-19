@@ -13,10 +13,6 @@ public class AnimationSystem : MonoBehaviour
     }
 
     public static AnimationSystem Instance { get; private set; }
-    
-    [Header("Animators")] 
-    [SerializeField] private Animator upperBodyAnimator;
-    [SerializeField] private Animator legsAnimator;
 
     [Header("Upper Body and Legs References")]
     [SerializeField] private Transform upperBody;
@@ -24,10 +20,10 @@ public class AnimationSystem : MonoBehaviour
 
     [Header("Events")] 
     [SerializeField] private GameEventSO OnDirectionChanged;
-
-    private SpriteRenderer upperBodySpriteRenderer;
-    private SpriteRenderer legsSpriteRenderer;
+    
     private Direction direction;
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
@@ -41,8 +37,8 @@ public class AnimationSystem : MonoBehaviour
             Destroy(this);
         }
         
-        upperBodySpriteRenderer = upperBody.GetComponent<SpriteRenderer>();
-        legsSpriteRenderer = legs.GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -64,44 +60,34 @@ public class AnimationSystem : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            SetupIdleShootAnimation();
+            ShootAnimation();
         }
     }
 
     private void SetupIdleAnimationRight()
     {
+        animator.SetBool("isWalking", false);
         direction = Direction.Right;
         InvokeOnDirectionChangedEvent(direction);
-        upperBodyAnimator.SetBool("isWalking",false);
-        legsAnimator.SetBool("isWalking",false);
-        //upperBody.localPosition = idleAnimationUpperBodyOffsetRight;
-        legsSpriteRenderer.flipX = false;
-        upperBodySpriteRenderer.flipX = false;
+        spriteRenderer.flipX = false;
     }
     
     private void SetupIdleAnimationLeft()
     {
+        animator.SetBool("isWalking", false);
         direction = Direction.Left;
         InvokeOnDirectionChangedEvent(direction);
-        upperBodyAnimator.SetBool("isWalking",false);
-        legsAnimator.SetBool("isWalking",false);
-        //upperBody.localPosition = idleAnimationUpperBodyOffsetLeft;
-        legsSpriteRenderer.flipX = true;
-        upperBodySpriteRenderer.flipX = true;
+        spriteRenderer.flipX = true;
     }
     
     private void SetupWalkingAnimationRight()
     {
-        upperBodyAnimator.SetBool("isWalking", true);
-        legsAnimator.SetBool("isWalking", true);
-        //upperBody.localPosition = walkAnimationUpperBodyOffsetRight;
+        animator.SetBool("isWalking", true);
     }
     
-    private void SetupIdleShootAnimation()
+    private void ShootAnimation()
     {
-        upperBodyAnimator.SetTrigger("shoot");
-        legsAnimator.SetTrigger("shoot");
-        //upperBody.localPosition = idleShootAnimationUpperBodyOffsetRight;
+        animator.SetTrigger("shoot");
     }
 
     public Direction GetDirection()
