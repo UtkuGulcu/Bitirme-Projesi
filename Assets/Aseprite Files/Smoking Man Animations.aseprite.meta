@@ -121,14 +121,14 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Smoking Man Animations_Frame_0
     originalName: 
-    pivot: {x: 0.42307696, y: 0}
+    pivot: {x: 0.07999996, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 46
-      y: 118
-      width: 26
+      x: 4
+      y: 84
+      width: 25
       height: 33
     spriteID: a389617ea0abe8d41ba464f5480e04ae
     spriteBone: []
@@ -138,17 +138,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 46, y: 118}
+    uvTransform: {x: 4, y: 84}
   - name: Smoking Man Animations_Frame_1
     originalName: 
-    pivot: {x: 0.42307696, y: 0}
+    pivot: {x: 0.07999996, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 124
-      y: 158
-      width: 26
+      x: 174
+      y: 125
+      width: 25
       height: 31
     spriteID: bd7a508692b638345b5d6a4370000b39
     spriteBone: []
@@ -158,17 +158,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 124, y: 158}
+    uvTransform: {x: 174, y: 125}
   - name: Smoking Man Animations_Frame_2
     originalName: 
-    pivot: {x: 0.42307696, y: 0}
+    pivot: {x: 0.07999996, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 90
-      y: 213
-      width: 26
+      x: 34
+      y: 125
+      width: 25
       height: 32
     spriteID: 9cc578cc5337244438d106bbe8ea0ac0
     spriteBone: []
@@ -178,17 +178,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 90, y: 213}
+    uvTransform: {x: 34, y: 125}
   - name: Smoking Man Animations_Frame_3
     originalName: 
-    pivot: {x: 0.42307696, y: 0}
+    pivot: {x: 0.07999996, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 46
-      y: 159
-      width: 26
+      x: 37
+      y: 84
+      width: 25
       height: 33
     spriteID: 9ee6bff9529c6034aa746604d7dc5097
     spriteBone: []
@@ -198,17 +198,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 46, y: 159}
+    uvTransform: {x: 37, y: 84}
   - name: Smoking Man Animations_Frame_4
     originalName: 
-    pivot: {x: 0.42307696, y: 0}
+    pivot: {x: 0.07999996, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 124
-      y: 118
-      width: 26
+      x: 67
+      y: 125
+      width: 25
       height: 32
     spriteID: 05a45f02ffd5d7b47b3b1bc0379de7b3
     spriteBone: []
@@ -218,17 +218,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 124, y: 118}
+    uvTransform: {x: 67, y: 125}
   - name: Smoking Man Animations_Frame_5
     originalName: 
-    pivot: {x: 0.42307696, y: 0}
+    pivot: {x: 0.07999996, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 46
-      y: 200
-      width: 26
+      x: 70
+      y: 84
+      width: 25
       height: 33
     spriteID: a0080a17a7eeedd43b9dc9a12aff8a2e
     spriteBone: []
@@ -238,17 +238,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 46, y: 200}
+    uvTransform: {x: 70, y: 84}
   - name: Smoking Man Animations_Frame_6
     originalName: 
-    pivot: {x: 0.42307696, y: 0}
+    pivot: {x: 0.07999996, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 90
-      y: 4
-      width: 26
+      x: 103
+      y: 84
+      width: 25
       height: 33
     spriteID: 67ce8f32240b03b48b91eea070936506
     spriteBone: []
@@ -258,17 +258,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 90, y: 4}
+    uvTransform: {x: 103, y: 84}
   - name: Smoking Man Animations_Frame_7
     originalName: 
-    pivot: {x: 0.34375003, y: 0}
+    pivot: {x: 0.0645161, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 45
-      width: 32
+      x: 45
+      y: 43
+      width: 31
       height: 33
     spriteID: 6db26dd0a0bd3ec439253d1b1f7779f0
     spriteBone: []
@@ -278,17 +278,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 45}
+    uvTransform: {x: 45, y: 43}
   - name: Smoking Man Animations_Frame_8
     originalName: 
-    pivot: {x: 0.32352945, y: 0}
+    pivot: {x: 0.060606033, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 4
-      width: 34
+      y: 43
+      width: 33
       height: 33
     spriteID: 790c8be0c5dd4ed4ba63fc7e700e2957
     spriteBone: []
@@ -298,17 +298,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: 4, y: 43}
   - name: Smoking Man Animations_Frame_9
     originalName: 
-    pivot: {x: 0.5789474, y: 0}
+    pivot: {x: 0.11111106, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 160
-      y: 74
-      width: 19
+      x: 67
+      y: 206
+      width: 18
       height: 37
     spriteID: d3f290db7270bf84dab214705239d824
     spriteBone: []
@@ -318,17 +318,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 160, y: 74}
+    uvTransform: {x: 67, y: 206}
   - name: Smoking Man Animations_Frame_10
     originalName: 
-    pivot: {x: 0.4782609, y: 0}
+    pivot: {x: 0.09090905, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 90
-      y: 168
-      width: 23
+      x: 4
+      y: 125
+      width: 22
       height: 37
     spriteID: 9f423506fb451724eb904d9337997115
     spriteBone: []
@@ -338,17 +338,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 90, y: 168}
+    uvTransform: {x: 4, y: 125}
   - name: Smoking Man Animations_Frame_11
     originalName: 
-    pivot: {x: 0.42307696, y: 0}
+    pivot: {x: 0.07999996, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 90
-      y: 45
-      width: 26
+      x: 136
+      y: 84
+      width: 25
       height: 33
     spriteID: bf6f8231da2322e479d80f282daa85c6
     spriteBone: []
@@ -358,17 +358,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 90, y: 45}
+    uvTransform: {x: 136, y: 84}
   - name: Smoking Man Animations_Frame_12
     originalName: 
-    pivot: {x: 0.42307696, y: 0}
+    pivot: {x: 0.07999996, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 90
-      y: 86
-      width: 26
+      x: 169
+      y: 84
+      width: 25
       height: 33
     spriteID: 5d5b040756b8b5245b4315e407c5e093
     spriteBone: []
@@ -378,17 +378,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 90, y: 86}
+    uvTransform: {x: 169, y: 84}
   - name: Smoking Man Animations_Frame_13
     originalName: 
-    pivot: {x: 0.42307696, y: 0}
+    pivot: {x: 0.07999996, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 90
-      y: 127
-      width: 26
+      x: 202
+      y: 84
+      width: 25
       height: 33
     spriteID: 4d9ca2b446680f9429c764ee7ec11d65
     spriteBone: []
@@ -398,15 +398,15 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 90, y: 127}
+    uvTransform: {x: 202, y: 84}
   - name: Smoking Man Animations_Frame_14
     originalName: 
-    pivot: {x: 0.3928572, y: 0}
+    pivot: {x: 0.107142806, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 124
+      x: 125
       y: 4
       width: 28
       height: 30
@@ -418,16 +418,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 124, y: 4}
+    uvTransform: {x: 125, y: 4}
   - name: Smoking Man Animations_Frame_15
     originalName: 
-    pivot: {x: 0.41379312, y: -0.14814815}
+    pivot: {x: 0.13793108, y: -0.14814815}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 160
-      y: 4
+      x: 100
+      y: 125
       width: 29
       height: 27
     spriteID: 9df161159ed3d964882720f4b6b370d5
@@ -438,16 +438,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 160, y: 4}
+    uvTransform: {x: 100, y: 125}
   - name: Smoking Man Animations_Frame_16
     originalName: 
-    pivot: {x: 0.43750003, y: 0}
+    pivot: {x: 0.18750001, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 86
+      x: 84
+      y: 43
       width: 32
       height: 30
     spriteID: 0a07191e4818de746bd2f7afc05b52a2
@@ -458,16 +458,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 86}
+    uvTransform: {x: 84, y: 43}
   - name: Smoking Man Animations_Frame_17
     originalName: 
-    pivot: {x: 0.173913, y: 0}
+    pivot: {x: -0.17391296, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 160
-      y: 119
+      x: 36
+      y: 206
       width: 23
       height: 30
     spriteID: 14cb830d318b60542b20f92277676d33
@@ -478,16 +478,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 160, y: 119}
+    uvTransform: {x: 36, y: 206}
   - name: Smoking Man Animations_Frame_18
     originalName: 
-    pivot: {x: 0.34482756, y: 0}
+    pivot: {x: 0.06896548, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 200
+      x: 203
+      y: 43
       width: 29
       height: 31
     spriteID: f6f9ad3d64de9224290581a693083951
@@ -498,16 +498,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 200}
+    uvTransform: {x: 203, y: 43}
   - name: Smoking Man Animations_Frame_19
     originalName: 
-    pivot: {x: 0.40624997, y: -0.107142866}
+    pivot: {x: 0.15625003, y: -0.107142866}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 46
-      y: 82
+      x: 85
+      y: 4
       width: 32
       height: 28
     spriteID: cb8406e373391fa41adbee8bd9b8fb14
@@ -518,16 +518,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 46, y: 82}
+    uvTransform: {x: 85, y: 4}
   - name: Smoking Man Animations_Frame_20
     originalName: 
-    pivot: {x: 0.4193548, y: 0}
+    pivot: {x: 0.16129035, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 162
+      x: 164
+      y: 43
       width: 31
       height: 30
     spriteID: a6e363e9085f87f4193fc7403552726a
@@ -538,16 +538,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 162}
+    uvTransform: {x: 164, y: 43}
   - name: Smoking Man Animations_Frame_21
     originalName: 
-    pivot: {x: 0.18181814, y: 0}
+    pivot: {x: -0.1818181, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 160
-      y: 157
+      x: 93
+      y: 206
       width: 22
       height: 29
     spriteID: 40a50a1b36f03d24ba55842590414bad
@@ -558,16 +558,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 160, y: 157}
+    uvTransform: {x: 93, y: 206}
   - name: Smoking Man Animations_Frame_22
     originalName: 
-    pivot: {x: 0.3928572, y: 0}
+    pivot: {x: 0.107142806, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 124
-      y: 42
+      x: 161
+      y: 4
       width: 28
       height: 30
     spriteID: 5f0a238257e03fb4d9600dbb64952b6f
@@ -578,16 +578,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 124, y: 42}
+    uvTransform: {x: 161, y: 4}
   - name: Smoking Man Animations_Frame_23
     originalName: 
-    pivot: {x: 0.41379312, y: -0.14814815}
+    pivot: {x: 0.13793108, y: -0.14814815}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 160
-      y: 39
+      x: 137
+      y: 125
       width: 29
       height: 27
     spriteID: b8fa095fd835cff4daa3c013e9e2b638
@@ -598,16 +598,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 160, y: 39}
+    uvTransform: {x: 137, y: 125}
   - name: Smoking Man Animations_Frame_24
     originalName: 
-    pivot: {x: 0.43750003, y: 0}
+    pivot: {x: 0.18750001, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 124
+      x: 124
+      y: 43
       width: 32
       height: 30
     spriteID: 5631179200d573e45a77348a67034c85
@@ -618,16 +618,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 124}
+    uvTransform: {x: 124, y: 43}
   - name: Smoking Man Animations_Frame_25
     originalName: 
-    pivot: {x: 0.1428571, y: 0}
+    pivot: {x: -0.14285707, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 124
-      y: 80
+      x: 197
+      y: 4
       width: 28
       height: 30
     spriteID: 6fcce459807eff24993ce8fdc706ce92
@@ -638,15 +638,15 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 124, y: 80}
+    uvTransform: {x: 197, y: 4}
   - name: Smoking Man Animations_Frame_26
     originalName: 
-    pivot: {x: 0.27777776, y: 0}
+    pivot: {x: 0.05555553, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 46
+      x: 4
       y: 4
       width: 36
       height: 31
@@ -658,16 +658,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 46, y: 4}
+    uvTransform: {x: 4, y: 4}
   - name: Smoking Man Animations_Frame_27
     originalName: 
-    pivot: {x: 0.48148146, y: -0.107142866}
+    pivot: {x: 0.18518522, y: -0.107142866}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 124
-      y: 197
+      x: 4
+      y: 170
       width: 27
       height: 28
     spriteID: 4fb9327d2aa39334e964c0a1680b182e
@@ -678,16 +678,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 124, y: 197}
+    uvTransform: {x: 4, y: 170}
   - name: Smoking Man Animations_Frame_28
     originalName: 
-    pivot: {x: 0.44827583, y: 0}
+    pivot: {x: 0.17241383, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 46
-      y: 43
+      x: 48
+      y: 4
       width: 29
       height: 31
     spriteID: 23ed18a56b0129c4b95f2631d9f169a0
@@ -698,16 +698,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 46, y: 43}
+    uvTransform: {x: 48, y: 4}
   - name: Smoking Man Animations_Frame_29
     originalName: 
-    pivot: {x: 0.18181814, y: 0}
+    pivot: {x: -0.1818181, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 160
-      y: 194
+      x: 123
+      y: 206
       width: 22
       height: 29
     spriteID: 3f9f8532f23f7fb4eb58ad3ada07dc9e
@@ -718,7 +718,67 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 160, y: 194}
+    uvTransform: {x: 123, y: 206}
+  - name: Smoking Man Animations_Frame_30
+    originalName: 
+    pivot: {x: 0.119999945, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 207
+      y: 125
+      width: 25
+      height: 31
+    spriteID: 3d16b1bb4258a5741976efe407a610f7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 207, y: 125}
+  - name: Smoking Man Animations_Frame_31
+    originalName: 
+    pivot: {x: 0.041666646, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 206
+      width: 24
+      height: 31
+    spriteID: c9e68738837a2a147acb0bc8e703eae8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 206}
+  - name: Smoking Man Animations_Frame_32
+    originalName: 
+    pivot: {x: -0.1999999, y: -0.032258064}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 153
+      y: 206
+      width: 20
+      height: 31
+    spriteID: 7860446ee20ed0f46b0541aad9a1c09c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 153, y: 206}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -731,119 +791,119 @@ ScriptedImporter:
     - name: Smoking Man Animations_Frame_0
       frameIndex: 0
       cellRect:
-        x: 37
+        x: 54
         y: 0
-        width: 26
+        width: 25
         height: 33
       spriteId: a389617ea0abe8d41ba464f5480e04ae
     - name: Smoking Man Animations_Frame_1
       frameIndex: 1
       cellRect:
-        x: 37
+        x: 54
         y: 0
-        width: 26
+        width: 25
         height: 31
       spriteId: bd7a508692b638345b5d6a4370000b39
     - name: Smoking Man Animations_Frame_2
       frameIndex: 2
       cellRect:
-        x: 37
+        x: 54
         y: 0
-        width: 26
+        width: 25
         height: 32
       spriteId: 9cc578cc5337244438d106bbe8ea0ac0
     - name: Smoking Man Animations_Frame_3
       frameIndex: 3
       cellRect:
-        x: 37
+        x: 54
         y: 0
-        width: 26
+        width: 25
         height: 33
       spriteId: 9ee6bff9529c6034aa746604d7dc5097
     - name: Smoking Man Animations_Frame_4
       frameIndex: 4
       cellRect:
-        x: 37
+        x: 54
         y: 0
-        width: 26
+        width: 25
         height: 32
       spriteId: 05a45f02ffd5d7b47b3b1bc0379de7b3
     - name: Smoking Man Animations_Frame_5
       frameIndex: 5
       cellRect:
-        x: 37
+        x: 54
         y: 0
-        width: 26
+        width: 25
         height: 33
       spriteId: a0080a17a7eeedd43b9dc9a12aff8a2e
     - name: Smoking Man Animations_Frame_6
       frameIndex: 6
       cellRect:
-        x: 37
+        x: 54
         y: 0
-        width: 26
+        width: 25
         height: 33
       spriteId: 67ce8f32240b03b48b91eea070936506
     - name: Smoking Man Animations_Frame_7
       frameIndex: 7
       cellRect:
-        x: 37
+        x: 54
         y: 0
-        width: 32
+        width: 31
         height: 33
       spriteId: 6db26dd0a0bd3ec439253d1b1f7779f0
     - name: Smoking Man Animations_Frame_8
       frameIndex: 8
       cellRect:
-        x: 37
+        x: 54
         y: 0
-        width: 34
+        width: 33
         height: 33
       spriteId: 790c8be0c5dd4ed4ba63fc7e700e2957
     - name: Smoking Man Animations_Frame_9
       frameIndex: 9
       cellRect:
-        x: 37
+        x: 54
         y: 0
-        width: 19
+        width: 18
         height: 37
       spriteId: d3f290db7270bf84dab214705239d824
     - name: Smoking Man Animations_Frame_10
       frameIndex: 10
       cellRect:
-        x: 37
+        x: 54
         y: 0
-        width: 23
+        width: 22
         height: 37
       spriteId: 9f423506fb451724eb904d9337997115
     - name: Smoking Man Animations_Frame_11
       frameIndex: 11
       cellRect:
-        x: 37
+        x: 54
         y: 0
-        width: 26
+        width: 25
         height: 33
       spriteId: bf6f8231da2322e479d80f282daa85c6
     - name: Smoking Man Animations_Frame_12
       frameIndex: 12
       cellRect:
-        x: 37
+        x: 54
         y: 0
-        width: 26
+        width: 25
         height: 33
       spriteId: 5d5b040756b8b5245b4315e407c5e093
     - name: Smoking Man Animations_Frame_13
       frameIndex: 13
       cellRect:
-        x: 37
+        x: 54
         y: 0
-        width: 26
+        width: 25
         height: 33
       spriteId: 4d9ca2b446680f9429c764ee7ec11d65
     - name: Smoking Man Animations_Frame_14
       frameIndex: 14
       cellRect:
-        x: 37
+        x: 53
         y: 0
         width: 28
         height: 30
@@ -851,7 +911,7 @@ ScriptedImporter:
     - name: Smoking Man Animations_Frame_15
       frameIndex: 15
       cellRect:
-        x: 36
+        x: 52
         y: 4
         width: 29
         height: 27
@@ -859,7 +919,7 @@ ScriptedImporter:
     - name: Smoking Man Animations_Frame_16
       frameIndex: 16
       cellRect:
-        x: 34
+        x: 50
         y: 0
         width: 32
         height: 30
@@ -867,7 +927,7 @@ ScriptedImporter:
     - name: Smoking Man Animations_Frame_17
       frameIndex: 17
       cellRect:
-        x: 44
+        x: 60
         y: 0
         width: 23
         height: 30
@@ -875,7 +935,7 @@ ScriptedImporter:
     - name: Smoking Man Animations_Frame_18
       frameIndex: 18
       cellRect:
-        x: 38
+        x: 54
         y: 0
         width: 29
         height: 31
@@ -883,7 +943,7 @@ ScriptedImporter:
     - name: Smoking Man Animations_Frame_19
       frameIndex: 19
       cellRect:
-        x: 35
+        x: 51
         y: 3
         width: 32
         height: 28
@@ -891,7 +951,7 @@ ScriptedImporter:
     - name: Smoking Man Animations_Frame_20
       frameIndex: 20
       cellRect:
-        x: 35
+        x: 51
         y: 0
         width: 31
         height: 30
@@ -899,7 +959,7 @@ ScriptedImporter:
     - name: Smoking Man Animations_Frame_21
       frameIndex: 21
       cellRect:
-        x: 44
+        x: 60
         y: 0
         width: 22
         height: 29
@@ -907,7 +967,7 @@ ScriptedImporter:
     - name: Smoking Man Animations_Frame_22
       frameIndex: 22
       cellRect:
-        x: 37
+        x: 53
         y: 0
         width: 28
         height: 30
@@ -915,7 +975,7 @@ ScriptedImporter:
     - name: Smoking Man Animations_Frame_23
       frameIndex: 23
       cellRect:
-        x: 36
+        x: 52
         y: 4
         width: 29
         height: 27
@@ -923,7 +983,7 @@ ScriptedImporter:
     - name: Smoking Man Animations_Frame_24
       frameIndex: 24
       cellRect:
-        x: 34
+        x: 50
         y: 0
         width: 32
         height: 30
@@ -931,7 +991,7 @@ ScriptedImporter:
     - name: Smoking Man Animations_Frame_25
       frameIndex: 25
       cellRect:
-        x: 44
+        x: 60
         y: 0
         width: 28
         height: 30
@@ -939,7 +999,7 @@ ScriptedImporter:
     - name: Smoking Man Animations_Frame_26
       frameIndex: 26
       cellRect:
-        x: 38
+        x: 54
         y: 0
         width: 36
         height: 31
@@ -947,7 +1007,7 @@ ScriptedImporter:
     - name: Smoking Man Animations_Frame_27
       frameIndex: 27
       cellRect:
-        x: 35
+        x: 51
         y: 3
         width: 27
         height: 28
@@ -955,7 +1015,7 @@ ScriptedImporter:
     - name: Smoking Man Animations_Frame_28
       frameIndex: 28
       cellRect:
-        x: 35
+        x: 51
         y: 0
         width: 29
         height: 31
@@ -963,14 +1023,38 @@ ScriptedImporter:
     - name: Smoking Man Animations_Frame_29
       frameIndex: 29
       cellRect:
-        x: 44
+        x: 60
         y: 0
         width: 22
         height: 29
       spriteId: 3f9f8532f23f7fb4eb58ad3ada07dc9e
+    - name: Smoking Man Animations_Frame_30
+      frameIndex: 30
+      cellRect:
+        x: 53
+        y: 0
+        width: 25
+        height: 31
+      spriteId: 3d16b1bb4258a5741976efe407a610f7
+    - name: Smoking Man Animations_Frame_31
+      frameIndex: 31
+      cellRect:
+        x: 55
+        y: 0
+        width: 24
+        height: 31
+      spriteId: c9e68738837a2a147acb0bc8e703eae8
+    - name: Smoking Man Animations_Frame_32
+      frameIndex: 32
+      cellRect:
+        x: 60
+        y: 1
+        width: 20
+        height: 31
+      spriteId: 7860446ee20ed0f46b0541aad9a1c09c
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 96, y: 64}
+  canvasSize: {x: 112, y: 64}

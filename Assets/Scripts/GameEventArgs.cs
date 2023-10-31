@@ -6,6 +6,6 @@ public class GameEventArgs
 {
     public class OnDirectionChanged
     {
-        public AnimationSystem.Direction newDirection;
+        public InputManager.Direction newDirection;
     }
 }
