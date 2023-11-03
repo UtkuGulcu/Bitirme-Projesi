@@ -8,9 +8,11 @@ public class PlayerAnimation : MonoBehaviour
 {
     [Header("References")] 
     [SerializeField] private PlayerController playerController;
+    [SerializeField] private PlayerInputManager playerInputManager;
 
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+
     private static readonly int IsWalkingID = Animator.StringToHash("isWalking");
     private static readonly int ShootID = Animator.StringToHash("shoot");
 
@@ -30,16 +32,21 @@ public class PlayerAnimation : MonoBehaviour
         {
             SetupIdleAnimation();
         }
+        
+        FlipSprite();
     }
 
-    public void OnDirectionChanged(object sender, object data)
+    private void FlipSprite()
     {
-        GameEventArgs.OnDirectionChanged args = data as GameEventArgs.OnDirectionChanged;
+        if (playerInputManager.GetHorizontalInput() == 0)
+        {
+            return;
+        }
 
-        spriteRenderer.flipX = args.newDirection == InputManager.Direction.Left;
+        spriteRenderer.flipX = playerInputManager.GetHorizontalInput() < 0;
     }
 
-    public void OnShootButtonDown()
+    public void PlayShootAnimation()
     {
         animator.SetTrigger(ShootID);
     }

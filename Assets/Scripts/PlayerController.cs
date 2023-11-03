@@ -15,10 +15,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float frictionAmount;
 
     private Rigidbody2D rb;
+    private PlayerInputManager playerInputManager;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerInputManager = GetComponent<PlayerInputManager>();
     }
     
     private void FixedUpdate()
@@ -29,26 +31,26 @@ public class PlayerController : MonoBehaviour
 
     private void HandleMovement()
     {
-        float targetSpeed = InputManager.Instance.GetHorizontalInput() * maxMovementSpeed;
+        float targetSpeed = playerInputManager.GetHorizontalInput() * maxMovementSpeed;
         float speedDifference = targetSpeed - rb.velocity.x;
         float accelerationRate = Mathf.Abs(targetSpeed) > 0.01f ? acceleration : deceleration;
         float movement = Mathf.Pow(Mathf.Abs(speedDifference) * accelerationRate, velocityPower) * Mathf.Sign(speedDifference);
         
         rb.AddForce(movement * Vector2.right);
     }
-
+    
     private void HandleFriction()
     {
-        if (Mathf.Abs(InputManager.Instance.GetHorizontalInput()) < 0.01f)
+        if (Mathf.Abs(playerInputManager.GetHorizontalInput()) < 0.01f)
         {
             float amount = Mathf.Min(Mathf.Abs(rb.velocity.x), frictionAmount);
             amount *= Mathf.Sign(rb.velocity.x);
             rb.AddForce(Vector2.right * -amount, ForceMode2D.Impulse);
         }
     }
-
+    
     public bool IsMoving()
     {
-        return Mathf.Abs(InputManager.Instance.GetHorizontalInput()) > 0.01f;
+        return Mathf.Abs(playerInputManager.GetHorizontalInput()) > 0.01f;
     }
 }

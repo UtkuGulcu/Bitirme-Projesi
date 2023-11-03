@@ -4,8 +4,4 @@ using UnityEngine;
 
 public class GameEventArgs
 {
-    public class OnDirectionChanged
-    {
-        public InputManager.Direction newDirection;
-    }
 }
