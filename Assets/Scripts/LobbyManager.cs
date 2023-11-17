@@ -44,7 +44,7 @@ public class LobbyManager : MonoBehaviour
 
         if (!activeDevices.Contains(inputDevice))
         {
-            Debug.Log("Player joins");
+            Debug.Log($"Player using {inputDevice} joins");
             LobbyPreferences.AddDevice(inputDevice);
         }
     }

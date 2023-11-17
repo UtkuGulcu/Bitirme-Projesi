@@ -2,62 +2,64 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class PlayerAnimation : MonoBehaviour
 {
     [Header("References")] 
     [SerializeField] private PlayerController playerController;
-    [SerializeField] private PlayerInputManager playerInputManager;
 
+    private static readonly int isWalkingID = Animator.StringToHash("isWalking");
+    private static readonly int shootID = Animator.StringToHash("shoot");
+    private static readonly int jumpID = Animator.StringToHash("jump");
+    private static readonly int fallingStarted = Animator.StringToHash("fallingStarted");
+    private static readonly int fallingFinished = Animator.StringToHash("fallingFinished");
+    
     private Animator animator;
-    private SpriteRenderer spriteRenderer;
-
-    private static readonly int IsWalkingID = Animator.StringToHash("isWalking");
-    private static readonly int ShootID = Animator.StringToHash("shoot");
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
         if (playerController.IsMoving())
         {
-            SetupWalkingAnimation();
+            PlayWalkingAnimation();
         }
         else
         {
-            SetupIdleAnimation();
+            PlayIdleAnimation();
         }
-        
-        FlipSprite();
     }
 
-    private void FlipSprite()
+    public void PlayFallingAnimation()
     {
-        if (playerInputManager.GetHorizontalInput() == 0)
-        {
-            return;
-        }
+        animator.SetTrigger(fallingStarted);
+    }
 
-        spriteRenderer.flipX = playerInputManager.GetHorizontalInput() < 0;
+    public void StopFallingAnimation()
+    {
+        animator.SetTrigger(fallingFinished);
+    }
+    
+    public void PlayJumpAnimation()
+    {
+        animator.SetTrigger(jumpID);
     }
 
     public void PlayShootAnimation()
     {
-        animator.SetTrigger(ShootID);
+        animator.SetTrigger(shootID);
     }
 
-    private void SetupIdleAnimation()
+    private void PlayIdleAnimation()
     {
-        animator.SetBool(IsWalkingID, false);
+        animator.SetBool(isWalkingID, false);
     }
 
-    private void SetupWalkingAnimation()
+    private void PlayWalkingAnimation()
     {
-        animator.SetBool(IsWalkingID, true);
+        animator.SetBool(isWalkingID, true);
     }
 }

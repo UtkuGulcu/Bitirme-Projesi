@@ -12,20 +12,15 @@ public class PlayerInputManager : MonoBehaviour
 
     private void Awake()
     {
-        // if (Instance == null)
-        // {
-        //     Instance = this;
-        // }
-        // else
-        // {
-        //     Debug.LogError("There are multiple Input Managers!!");
-        //     Destroy(this);
-        // }
-
         player = GetComponent<Player>();
         playerInput = GetComponent<PlayerInput>();
     }
 
+    private void Update()
+    {
+        ReadMovementInput();
+    }
+    
     public void OnShootButtonDown(InputAction.CallbackContext context)
     {
         if (context.phase != InputActionPhase.Performed)
@@ -34,19 +29,41 @@ public class PlayerInputManager : MonoBehaviour
         }
         
         player.TryToShoot();
-        Debug.Log($"Player {playerInput.playerIndex} is shooting");
     }
 
-    private void Update()
+    public void OnJumpButtonDown(InputAction.CallbackContext context)
     {
-        ReadMovementInput();
+        if (context.phase != InputActionPhase.Performed)
+        {
+            return;
+        }
+        
+        player.TryToJump();
+    }
+
+    public void OnDropDownButtonDown(InputAction.CallbackContext context)
+    {
+        if (context.phase != InputActionPhase.Performed)
+        {
+            return;
+        }
+        
+        player.TryToDropDown();
     }
 
     private void ReadMovementInput()
     {
-        Vector2 inputVector = playerInput.actions["Movement"].ReadValue<Vector2>();
+        horizontalInput = playerInput.actions["Movement"].ReadValue<float>();
 
-        horizontalInput = inputVector.x;
+        switch (horizontalInput)
+        {
+            case > 0:
+                horizontalInput = 1;
+                break;
+            case < 0:
+                horizontalInput = -1;
+                break;
+        }
     }
     
     public float GetHorizontalInput()
