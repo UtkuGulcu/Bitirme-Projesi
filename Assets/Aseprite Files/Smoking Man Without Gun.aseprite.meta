@@ -1,0 +1,1060 @@
+fileFormatVersion: 2
+guid: 5df7cdd9555e3dc4fbc21551aa609558
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Smoking Man Without Gun_Frame_0
+    originalName: 
+    pivot: {x: 0.33333337, y: 0.10810811}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 57
+      y: 172
+      width: 33
+      height: 37
+    spriteID: b4aa4eba2f068c44ab417a48b1c0222d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 57, y: 172}
+  - name: Smoking Man Without Gun_Frame_1
+    originalName: 
+    pivot: {x: 0.33333337, y: 0.114285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 101
+      y: 181
+      width: 33
+      height: 35
+    spriteID: 932cafabd4a6c5b46b75c1b44e8d4b17
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 101, y: 181}
+  - name: Smoking Man Without Gun_Frame_2
+    originalName: 
+    pivot: {x: 0.33333337, y: 0.11111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 101
+      y: 49
+      width: 33
+      height: 36
+    spriteID: a3b09d1920027d047867262450ae5852
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 101, y: 49}
+  - name: Smoking Man Without Gun_Frame_3
+    originalName: 
+    pivot: {x: 0.33333337, y: 0.10810811}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 57
+      y: 217
+      width: 33
+      height: 37
+    spriteID: dfae58440c3280b4ebd4c70a1b21bc5b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 57, y: 217}
+  - name: Smoking Man Without Gun_Frame_4
+    originalName: 
+    pivot: {x: 0.33333337, y: 0.11111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 101
+      y: 93
+      width: 33
+      height: 36
+    spriteID: 2342488c331431041a9f40b5bf7d5d0b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 101, y: 93}
+  - name: Smoking Man Without Gun_Frame_5
+    originalName: 
+    pivot: {x: 0.33333337, y: 0.10810811}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 57
+      y: 262
+      width: 33
+      height: 37
+    spriteID: 6eaffe1773618f4498e7e4871b416c6d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 57, y: 262}
+  - name: Smoking Man Without Gun_Frame_6
+    originalName: 
+    pivot: {x: 0.33333337, y: 0.10810811}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 57
+      y: 307
+      width: 33
+      height: 37
+    spriteID: b5504eab0a897c3418097720461ba11b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 57, y: 307}
+  - name: Smoking Man Without Gun_Frame_7
+    originalName: 
+    pivot: {x: 0.33333337, y: 0.10810811}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 57
+      y: 352
+      width: 33
+      height: 37
+    spriteID: 77cf80827e5597e4591f198bbd68e5fb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 57, y: 352}
+  - name: Smoking Man Without Gun_Frame_8
+    originalName: 
+    pivot: {x: 0.2619048, y: 0.10810811}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 47
+      width: 42
+      height: 37
+    spriteID: fc74cd55e2089b944b9dcd804359f906
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 47}
+  - name: Smoking Man Without Gun_Frame_9
+    originalName: 
+    pivot: {x: 0.33333337, y: 0.09756097}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 134
+      width: 33
+      height: 41
+    spriteID: 39567958dafba0a4ba6ea68a01b6080c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 134}
+  - name: Smoking Man Without Gun_Frame_10
+    originalName: 
+    pivot: {x: 0.33333337, y: 0.09756097}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 183
+      width: 33
+      height: 41
+    spriteID: 3c07d32a4e2c35a4fa74984da647ee61
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 183}
+  - name: Smoking Man Without Gun_Frame_11
+    originalName: 
+    pivot: {x: 0.33333337, y: 0.10810811}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 57
+      y: 397
+      width: 33
+      height: 37
+    spriteID: b9ee93669e941e041b831ddc811780e2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 57, y: 397}
+  - name: Smoking Man Without Gun_Frame_12
+    originalName: 
+    pivot: {x: 0.33333337, y: 0.10810811}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 57
+      y: 442
+      width: 33
+      height: 37
+    spriteID: 0f0c10d1f59e1334c8111f4f5f80cda7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 57, y: 442}
+  - name: Smoking Man Without Gun_Frame_13
+    originalName: 
+    pivot: {x: 0.33333337, y: 0.10810811}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 101
+      y: 4
+      width: 33
+      height: 37
+    spriteID: 10766a2a00bc4e84ea85b5e4c679e0d2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 101, y: 4}
+  - name: Smoking Man Without Gun_Frame_14
+    originalName: 
+    pivot: {x: 0.3055556, y: 0.11764706}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 404
+      width: 36
+      height: 34
+    spriteID: 6bf731aa05745b34ca3ec31be3d80fcd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 404}
+  - name: Smoking Man Without Gun_Frame_15
+    originalName: 
+    pivot: {x: 0.3055556, y: 0.114285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 232
+      width: 36
+      height: 35
+    spriteID: ba3972149af4a014eaac75d153190876
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 232}
+  - name: Smoking Man Without Gun_Frame_16
+    originalName: 
+    pivot: {x: 0.3055556, y: 0.11764706}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 446
+      width: 36
+      height: 34
+    spriteID: fe39c0715b3159044a80d8e63af68669
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 446}
+  - name: Smoking Man Without Gun_Frame_17
+    originalName: 
+    pivot: {x: 0.3055556, y: 0.11764706}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 57
+      y: 4
+      width: 36
+      height: 34
+    spriteID: 59c02399227252e479692e739441bc79
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 57, y: 4}
+  - name: Smoking Man Without Gun_Frame_18
+    originalName: 
+    pivot: {x: 0.3055556, y: 0.114285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 275
+      width: 36
+      height: 35
+    spriteID: 34e7f941e8e854042ae47dedb7b50901
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 275}
+  - name: Smoking Man Without Gun_Frame_19
+    originalName: 
+    pivot: {x: 0.3055556, y: 0.114285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 318
+      width: 36
+      height: 35
+    spriteID: 70c370c650c44ad4f9b938704564f31f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 318}
+  - name: Smoking Man Without Gun_Frame_20
+    originalName: 
+    pivot: {x: 0.3055556, y: 0.11764706}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 57
+      y: 46
+      width: 36
+      height: 34
+    spriteID: 666c5fd11dd05f0489de34a08a657762
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 57, y: 46}
+  - name: Smoking Man Without Gun_Frame_21
+    originalName: 
+    pivot: {x: 0.3055556, y: 0.121212125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 184
+      y: 4
+      width: 36
+      height: 33
+    spriteID: c479ed018f875a449a0234dfcf40999e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 184, y: 4}
+  - name: Smoking Man Without Gun_Frame_22
+    originalName: 
+    pivot: {x: 0.3055556, y: 0.11764706}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 57
+      y: 88
+      width: 36
+      height: 34
+    spriteID: d048930c73a1e88498c314a23c87f15d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 57, y: 88}
+  - name: Smoking Man Without Gun_Frame_23
+    originalName: 
+    pivot: {x: 0.3055556, y: 0.114285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 361
+      width: 36
+      height: 35
+    spriteID: 41dfea2ee213dc94483aa17a8eb90e38
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 361}
+  - name: Smoking Man Without Gun_Frame_24
+    originalName: 
+    pivot: {x: 0.3055556, y: 0.11764706}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 57
+      y: 130
+      width: 36
+      height: 34
+    spriteID: bf22a720849ab4742ab2946b5632ed92
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 57, y: 130}
+  - name: Smoking Man Without Gun_Frame_25
+    originalName: 
+    pivot: {x: 0.255814, y: 0.11764706}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 92
+      width: 43
+      height: 34
+    spriteID: 5c1f434ca21393944bab402b0db61d4b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 92}
+  - name: Smoking Man Without Gun_Frame_26
+    originalName: 
+    pivot: {x: 0.24444449, y: 0.114285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 45
+      height: 35
+    spriteID: af54f436045033248b5911ec45ffb7e6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Smoking Man Without Gun_Frame_27
+    originalName: 
+    pivot: {x: 0.33333337, y: 0.114285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 101
+      y: 224
+      width: 33
+      height: 35
+    spriteID: b1e66f86eaa491a40955a211d7d3029c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 101, y: 224}
+  - name: Smoking Man Without Gun_Frame_28
+    originalName: 
+    pivot: {x: 0.32352945, y: 0.114285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 142
+      y: 4
+      width: 34
+      height: 35
+    spriteID: f3d3be276a4264a4ba90a42517f922c2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 142, y: 4}
+  - name: Smoking Man Without Gun_Frame_29
+    originalName: 
+    pivot: {x: 0.31428576, y: 0.121212125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 184
+      y: 45
+      width: 35
+      height: 33
+    spriteID: 94515b18f1f66494686cd77509a12d59
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 184, y: 45}
+  - name: Smoking Man Without Gun_Frame_30
+    originalName: 
+    pivot: {x: 0.33333337, y: 0.114285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 101
+      y: 267
+      width: 33
+      height: 35
+    spriteID: 87d9b0872e2eaff419d11aa3bf153783
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 101, y: 267}
+  - name: Smoking Man Without Gun_Frame_31
+    originalName: 
+    pivot: {x: 0.33333337, y: 0.114285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 101
+      y: 310
+      width: 33
+      height: 35
+    spriteID: ceb754efd8237e84790967903a3f1c7b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 101, y: 310}
+  - name: Smoking Man Without Gun_Frame_32
+    originalName: 
+    pivot: {x: 0.33333337, y: 0.11111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 101
+      y: 137
+      width: 33
+      height: 36
+    spriteID: dfba82e1405262346aaf90d13371106d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 101, y: 137}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -270521778
+    name: Smoking Man Without Gun
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Smoking Man Without Gun_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 45
+        y: -4
+        width: 33
+        height: 37
+      spriteId: b4aa4eba2f068c44ab417a48b1c0222d
+    - name: Smoking Man Without Gun_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 45
+        y: -4
+        width: 33
+        height: 35
+      spriteId: 932cafabd4a6c5b46b75c1b44e8d4b17
+    - name: Smoking Man Without Gun_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 45
+        y: -4
+        width: 33
+        height: 36
+      spriteId: a3b09d1920027d047867262450ae5852
+    - name: Smoking Man Without Gun_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 45
+        y: -4
+        width: 33
+        height: 37
+      spriteId: dfae58440c3280b4ebd4c70a1b21bc5b
+    - name: Smoking Man Without Gun_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 45
+        y: -4
+        width: 33
+        height: 36
+      spriteId: 2342488c331431041a9f40b5bf7d5d0b
+    - name: Smoking Man Without Gun_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 45
+        y: -4
+        width: 33
+        height: 37
+      spriteId: 6eaffe1773618f4498e7e4871b416c6d
+    - name: Smoking Man Without Gun_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 45
+        y: -4
+        width: 33
+        height: 37
+      spriteId: b5504eab0a897c3418097720461ba11b
+    - name: Smoking Man Without Gun_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 45
+        y: -4
+        width: 33
+        height: 37
+      spriteId: 77cf80827e5597e4591f198bbd68e5fb
+    - name: Smoking Man Without Gun_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 45
+        y: -4
+        width: 42
+        height: 37
+      spriteId: fc74cd55e2089b944b9dcd804359f906
+    - name: Smoking Man Without Gun_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 45
+        y: -4
+        width: 33
+        height: 41
+      spriteId: 39567958dafba0a4ba6ea68a01b6080c
+    - name: Smoking Man Without Gun_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 45
+        y: -4
+        width: 33
+        height: 41
+      spriteId: 3c07d32a4e2c35a4fa74984da647ee61
+    - name: Smoking Man Without Gun_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 45
+        y: -4
+        width: 33
+        height: 37
+      spriteId: b9ee93669e941e041b831ddc811780e2
+    - name: Smoking Man Without Gun_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 45
+        y: -4
+        width: 33
+        height: 37
+      spriteId: 0f0c10d1f59e1334c8111f4f5f80cda7
+    - name: Smoking Man Without Gun_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 45
+        y: -4
+        width: 33
+        height: 37
+      spriteId: 10766a2a00bc4e84ea85b5e4c679e0d2
+    - name: Smoking Man Without Gun_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 45
+        y: -4
+        width: 36
+        height: 34
+      spriteId: 6bf731aa05745b34ca3ec31be3d80fcd
+    - name: Smoking Man Without Gun_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 45
+        y: -4
+        width: 36
+        height: 35
+      spriteId: ba3972149af4a014eaac75d153190876
+    - name: Smoking Man Without Gun_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 45
+        y: -4
+        width: 36
+        height: 34
+      spriteId: fe39c0715b3159044a80d8e63af68669
+    - name: Smoking Man Without Gun_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 45
+        y: -4
+        width: 36
+        height: 34
+      spriteId: 59c02399227252e479692e739441bc79
+    - name: Smoking Man Without Gun_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 45
+        y: -4
+        width: 36
+        height: 35
+      spriteId: 34e7f941e8e854042ae47dedb7b50901
+    - name: Smoking Man Without Gun_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 45
+        y: -4
+        width: 36
+        height: 35
+      spriteId: 70c370c650c44ad4f9b938704564f31f
+    - name: Smoking Man Without Gun_Frame_20
+      frameIndex: 20
+      cellRect:
+        x: 45
+        y: -4
+        width: 36
+        height: 34
+      spriteId: 666c5fd11dd05f0489de34a08a657762
+    - name: Smoking Man Without Gun_Frame_21
+      frameIndex: 21
+      cellRect:
+        x: 45
+        y: -4
+        width: 36
+        height: 33
+      spriteId: c479ed018f875a449a0234dfcf40999e
+    - name: Smoking Man Without Gun_Frame_22
+      frameIndex: 22
+      cellRect:
+        x: 45
+        y: -4
+        width: 36
+        height: 34
+      spriteId: d048930c73a1e88498c314a23c87f15d
+    - name: Smoking Man Without Gun_Frame_23
+      frameIndex: 23
+      cellRect:
+        x: 45
+        y: -4
+        width: 36
+        height: 35
+      spriteId: 41dfea2ee213dc94483aa17a8eb90e38
+    - name: Smoking Man Without Gun_Frame_24
+      frameIndex: 24
+      cellRect:
+        x: 45
+        y: -4
+        width: 36
+        height: 34
+      spriteId: bf22a720849ab4742ab2946b5632ed92
+    - name: Smoking Man Without Gun_Frame_25
+      frameIndex: 25
+      cellRect:
+        x: 45
+        y: -4
+        width: 43
+        height: 34
+      spriteId: 5c1f434ca21393944bab402b0db61d4b
+    - name: Smoking Man Without Gun_Frame_26
+      frameIndex: 26
+      cellRect:
+        x: 45
+        y: -4
+        width: 45
+        height: 35
+      spriteId: af54f436045033248b5911ec45ffb7e6
+    - name: Smoking Man Without Gun_Frame_27
+      frameIndex: 27
+      cellRect:
+        x: 45
+        y: -4
+        width: 33
+        height: 35
+      spriteId: b1e66f86eaa491a40955a211d7d3029c
+    - name: Smoking Man Without Gun_Frame_28
+      frameIndex: 28
+      cellRect:
+        x: 45
+        y: -4
+        width: 34
+        height: 35
+      spriteId: f3d3be276a4264a4ba90a42517f922c2
+    - name: Smoking Man Without Gun_Frame_29
+      frameIndex: 29
+      cellRect:
+        x: 45
+        y: -4
+        width: 35
+        height: 33
+      spriteId: 94515b18f1f66494686cd77509a12d59
+    - name: Smoking Man Without Gun_Frame_30
+      frameIndex: 30
+      cellRect:
+        x: 45
+        y: -4
+        width: 33
+        height: 35
+      spriteId: 87d9b0872e2eaff419d11aa3bf153783
+    - name: Smoking Man Without Gun_Frame_31
+      frameIndex: 31
+      cellRect:
+        x: 45
+        y: -4
+        width: 33
+        height: 35
+      spriteId: ceb754efd8237e84790967903a3f1c7b
+    - name: Smoking Man Without Gun_Frame_32
+      frameIndex: 32
+      cellRect:
+        x: 45
+        y: -4
+        width: 33
+        height: 36
+      spriteId: dfba82e1405262346aaf90d13371106d
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 112, y: 64}
