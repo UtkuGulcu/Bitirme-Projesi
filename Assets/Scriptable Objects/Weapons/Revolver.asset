@@ -17,5 +17,5 @@ MonoBehaviour:
   weaponName: Revolver
   localPosition: {x: 0.1635, y: 0.1691}
   bulletSpeed: 2000
-  impactForce: 1500
-  fireRate: 0.8
+  impactForce: 2500
+  fireRate: 0.5

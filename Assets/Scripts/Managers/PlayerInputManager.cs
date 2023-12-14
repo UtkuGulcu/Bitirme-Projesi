@@ -19,17 +19,19 @@ public class PlayerInputManager : MonoBehaviour
     private void Update()
     {
         ReadMovementInput();
+        ReadShootInput();
     }
     
-    public void OnShootButtonDown(InputAction.CallbackContext context)
-    {
-        if (context.phase != InputActionPhase.Performed)
-        {
-            return;
-        }
-        
-        player.TryToShoot();
-    }
+    // public void OnShootButtonDown(InputAction.CallbackContext context)
+    // {
+    //     // if (context.phase != InputActionPhase.Performed)
+    //     // {
+    //     //     return;
+    //     // }
+    //     
+    //     
+    //     player.TryToShoot();
+    // }
 
     public void OnJumpButtonDown(InputAction.CallbackContext context)
     {
@@ -63,6 +65,17 @@ public class PlayerInputManager : MonoBehaviour
             case < 0:
                 horizontalInput = -1;
                 break;
+        }
+    }
+    
+    private void ReadShootInput()
+    {
+        float shootInput = playerInput.actions["Shoot"].ReadValue<float>();
+        
+
+        if (shootInput == 1)
+        {
+            player.TryToShoot();
         }
     }
     

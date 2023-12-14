@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
     private Rigidbody2D rb;
     private PlayerController.Direction direction;
     private float timer;
-    private const float timerMax = 5f;
+    private const float TIMER_MAX = 5f;
 
     private void Awake()
     {
@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
     {
         timer += Time.deltaTime;
         
-        if (timer >= timerMax)
+        if (timer >= TIMER_MAX)
         {
             DestroySelf();
         }

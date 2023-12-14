@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 5393468797187827825}
   - component: {fileID: 2791735171482152486}
   - component: {fileID: 7127538100929559855}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Second Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.64, y: -1.99, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 5.067834, y: 5.067834, z: 5.067834}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8145992837165085912}
@@ -239,7 +239,7 @@ MonoBehaviour:
   deceleration: 15
   velocityPower: 0.9
   frictionAmount: 0.2
-  jumpForce: 11
+  jumpForce: 9.5
   fallMultiplier: 1.4
   layersToDropDown:
     serializedVersion: 2
@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 8916208538931492552}
   - component: {fileID: 19152567884742860}
   - component: {fileID: 3138760299234740435}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,13 @@ public class Weapon : MonoBehaviour
     [SerializeField] private WeaponSO weaponData;
     [SerializeField] private Transform barrelTransform;
 
+    private WeaponAnimation weaponAnimation;
     private float nextFireTime;
+
+    private void Awake()
+    {
+        weaponAnimation = GetComponent<WeaponAnimation>();
+    }
 
     public void Setup()
     {
@@ -22,6 +29,8 @@ public class Weapon : MonoBehaviour
         bullet.Setup(direction);
 
         nextFireTime = Time.time + weaponData.fireRate;
+        
+        weaponAnimation.PlayFireAnimation();
     }
 
     public bool CanFire()

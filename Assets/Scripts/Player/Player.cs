@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private bool canDoubleJump = true;
     private int playerID;
+    private float pushForce;
+    private float pushTimer;
 
     private void Awake()
     {
@@ -30,12 +32,38 @@ public class Player : MonoBehaviour
         PickupWeapon(defaultWeapon);
     }
 
+    private void Update()
+    {
+        CheckDeathArea();
+    }
+
+    private void FixedUpdate()
+    {
+        if (pushTimer < 0.7f)
+        {
+            pushTimer += Time.fixedDeltaTime;
+            float newForce = Mathf.Lerp(pushForce, 0, pushTimer);
+            rb.AddForce(Vector2.right * (newForce * Time.fixedDeltaTime), ForceMode2D.Force);
+        }
+    }
+
+    private void CheckDeathArea()
+    {
+        if (transform.position.y <= -9f)
+        {
+            Die();
+        }
+    }
+
     public void TryToShoot()
     {
-        if (weapon.CanFire())
+        if (!weapon.CanFire()) return;
+        
+        weapon.Fire(playerController.GetDirection());
+        
+        if (groundedCheck.IsGrounded())
         {
             playerAnimation.PlayShootAnimation();
-            weapon.Fire(playerController.GetDirection());
         }
     }
 
@@ -78,6 +106,8 @@ public class Player : MonoBehaviour
 
     public void GetHit(float force)
     {
+        pushForce = force;
+        pushTimer = 0;
         rb.AddForce(Vector2.right * force * Time.fixedDeltaTime, ForceMode2D.Impulse);
     }
 
@@ -86,7 +116,7 @@ public class Player : MonoBehaviour
         playerID = ID;
     }
 
-    public void Die()
+    private void Die()
     {
         OnPlayerDied.Raise(this, playerID);
         Destroy(gameObject);

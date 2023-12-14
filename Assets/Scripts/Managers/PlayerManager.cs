@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -19,8 +20,8 @@ public class PlayerManager : MonoBehaviour
     
     
     [Header("References")]
-    [SerializeField] private GameObject playerPrefab;
-    [SerializeField] private Transform spawnPositionTransform;
+    [SerializeField] private GameObject[] playerPrefabArray;
+    [SerializeField] private Transform[] spawnPositionTransformArray;
 
     private Dictionary<int, PlayerData> playerDataDictionary;
     private int currentID;
@@ -95,7 +96,10 @@ public class PlayerManager : MonoBehaviour
     
     private void SpawnPlayerWithID(PlayerData playerData)
     {
-        GameObject spawnedObject = Instantiate(playerPrefab, spawnPositionTransform.position, Quaternion.identity);
+        GameObject selectedPrefab = playerPrefabArray[playerData.playerID - 1];
+        Transform selectedSpawnPositionTransform = spawnPositionTransformArray[playerData.playerID - 1];
+        
+        GameObject spawnedObject = Instantiate(selectedPrefab, selectedSpawnPositionTransform.position, Quaternion.identity);
 
         PlayerInput playerInput = spawnedObject.GetComponent<PlayerInput>();
         playerInput.SwitchCurrentControlScheme(playerData.inputDevice);
