@@ -15,7 +15,9 @@ MonoBehaviour:
   weaponPrefab: {fileID: 6584540506660451732, guid: 43acaa1916bb119488c572081c0f23ef, type: 3}
   bulletPrefab: {fileID: 2908404974713194023, guid: ed7b8c93db038004694522d86a802cf7, type: 3}
   weaponName: Revolver
-  localPosition: {x: 0.1635, y: 0.1691}
-  bulletSpeed: 2000
+  idleLocalPosition: {x: 0.1635, y: 0.1691, z: 0}
+  bulletSpeed: 15
   impactForce: 2500
   fireRate: 0.5
+  hasUnlimitedAmmo: 0
+  maxAmmo: 7

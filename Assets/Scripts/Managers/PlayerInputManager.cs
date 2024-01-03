@@ -22,17 +22,6 @@ public class PlayerInputManager : MonoBehaviour
         ReadShootInput();
     }
     
-    // public void OnShootButtonDown(InputAction.CallbackContext context)
-    // {
-    //     // if (context.phase != InputActionPhase.Performed)
-    //     // {
-    //     //     return;
-    //     // }
-    //     
-    //     
-    //     player.TryToShoot();
-    // }
-
     public void OnJumpButtonDown(InputAction.CallbackContext context)
     {
         if (context.phase != InputActionPhase.Performed)
@@ -72,7 +61,6 @@ public class PlayerInputManager : MonoBehaviour
     {
         float shootInput = playerInput.actions["Shoot"].ReadValue<float>();
         
-
         if (shootInput == 1)
         {
             player.TryToShoot();

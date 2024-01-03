@@ -18,4 +18,9 @@ public class WeaponAnimation : MonoBehaviour
     {
         animator.SetTrigger(fireTriggerID);
     }
+
+    public void DisableAnimator()
+    {
+        animator.enabled = false;
+    }
 }

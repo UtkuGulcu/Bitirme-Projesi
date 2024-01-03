@@ -1811,6 +1811,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1000335583}
   - component: {fileID: 1000335584}
+  - component: {fileID: 1000335585}
+  - component: {fileID: 1000335586}
   m_Layer: 5
   m_Name: Player Information UI
   m_TagString: Untagged
@@ -1852,6 +1854,62 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInformationPanelTemplate: {fileID: 1298197344}
   playerInformationPanelParentTransform: {fileID: 2010838105}
+--- !u!114 &1000335585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000335582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1043b87667d43bf48895ba44ffee4df2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameEvent: {fileID: 11400000, guid: f72ef36be9e483a4abaf7b6db3c68718, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1000335584}
+        m_TargetAssemblyTypeName: PlayerInformationUI, Assembly-CSharp
+        m_MethodName: UpdateWeaponInfo
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1000335586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000335582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1043b87667d43bf48895ba44ffee4df2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameEvent: {fileID: 11400000, guid: eda91bd1bed3f194e84a161f162d1ed7, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1000335584}
+        m_TargetAssemblyTypeName: PlayerInformationUI, Assembly-CSharp
+        m_MethodName: UpdateBulletCount
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1237519835
 GameObject:
   m_ObjectHideFlags: 0
@@ -2034,6 +2092,8 @@ MonoBehaviour:
   playerPrefabArray:
   - {fileID: 7713155510728474460, guid: 8bc015c5499400d449e9b99425a1a529, type: 3}
   - {fileID: 967060180328010035, guid: e9560efb659ece1429d6e53c3736675c, type: 3}
+  - {fileID: 2731570238725002163, guid: 2b8d14119b008c24eaf7c652b89c57dd, type: 3}
+  - {fileID: 6478132122428968681, guid: bc05d11b47336a641987de9ae9b4f2ba, type: 3}
   spawnPositionTransformArray:
   - {fileID: 1569451112}
   - {fileID: 161833056}
@@ -2653,6 +2713,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1724907063
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6083726624298699045, guid: c4a19f4f4f00f0c4b9b07847af3f2c5d, type: 3}
+      propertyPath: m_Name
+      value: Pickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995108624388793892, guid: c4a19f4f4f00f0c4b9b07847af3f2c5d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995108624388793892, guid: c4a19f4f4f00f0c4b9b07847af3f2c5d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995108624388793892, guid: c4a19f4f4f00f0c4b9b07847af3f2c5d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995108624388793892, guid: c4a19f4f4f00f0c4b9b07847af3f2c5d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995108624388793892, guid: c4a19f4f4f00f0c4b9b07847af3f2c5d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995108624388793892, guid: c4a19f4f4f00f0c4b9b07847af3f2c5d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995108624388793892, guid: c4a19f4f4f00f0c4b9b07847af3f2c5d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995108624388793892, guid: c4a19f4f4f00f0c4b9b07847af3f2c5d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995108624388793892, guid: c4a19f4f4f00f0c4b9b07847af3f2c5d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995108624388793892, guid: c4a19f4f4f00f0c4b9b07847af3f2c5d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c4a19f4f4f00f0c4b9b07847af3f2c5d, type: 3}
 --- !u!1 &2010838104
 GameObject:
   m_ObjectHideFlags: 0
@@ -2885,3 +3002,4 @@ SceneRoots:
   - {fileID: 1286337476}
   - {fileID: 166756777}
   - {fileID: 593248747}
+  - {fileID: 1724907063}

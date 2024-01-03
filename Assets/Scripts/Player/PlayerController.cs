@@ -35,6 +35,9 @@ public class PlayerController : MonoBehaviour
     private Direction direction;
     private readonly Vector3 leftDirectionAngles = new Vector3(0, 180, 0);
     private float previousGravityY;
+    private float pushForce;
+    private float pushTimer;
+    private readonly float pushTimerMax = 0.7f;
 
     private void Awake()
     {
@@ -50,6 +53,7 @@ public class PlayerController : MonoBehaviour
         HandleGravity();
         HandleDirection();
         HandleFallingDetection();
+        HandlePushMomentum();
     }
 
     private void HandleMovement()
@@ -117,6 +121,16 @@ public class PlayerController : MonoBehaviour
         previousGravityY = rb.velocity.y;
     }
 
+    private void HandlePushMomentum()
+    {
+        if (pushTimer < pushTimerMax)
+        {
+            pushTimer += Time.fixedDeltaTime;
+            float newForce = Mathf.Lerp(pushForce, 0, pushTimer);
+            rb.AddForce(Vector2.right * (newForce * Time.fixedDeltaTime), ForceMode2D.Force);
+        }
+    }
+
     public void Jump()
     {
         rb.velocity = new Vector2(rb.velocity.x, 0);
@@ -136,6 +150,13 @@ public class PlayerController : MonoBehaviour
         }
 
         StartCoroutine(IgnoreCollision(raycastHit.collider));
+    }
+
+    public void GetPushed(float force)
+    {
+        pushForce = force;
+        pushTimer = 0;
+        rb.AddForce(Vector2.right * force * Time.fixedDeltaTime, ForceMode2D.Impulse);
     }
     
     public bool IsMoving()

@@ -56,4 +56,21 @@ public class PlayerInformationUI : MonoBehaviour
             count++;
         }
     }
+
+    public void UpdateWeaponInfo(object sender, object data)
+    {
+        var args = data as GameEventArgs.OnWeaponPickedEventArgs;
+        int index = args.playerID - 1;
+        string weaponName = args.weaponName;
+        int ammo = args.ammo;
+        
+        panelList[index].UpdateWeaponInfo(weaponName, ammo);
+    }
+    
+    public void UpdateBulletCount(object sender, object data)
+    {
+        var args = data as GameEventArgs.OnShotFiredEventArgs;
+        int index = args.playerID - 1;
+        panelList[index].UpdateBulletCount(args.remainingAmmo);
+    }
 }

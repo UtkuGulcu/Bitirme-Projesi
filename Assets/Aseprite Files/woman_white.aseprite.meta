@@ -1,0 +1,836 @@
+fileFormatVersion: 2
+guid: 4847db902a3b74b498ea47de66cb5393
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: woman_white_Frame_0
+    originalName: 
+    pivot: {x: 0.25925925, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 127
+      width: 27
+      height: 33
+    spriteID: 7d583caa4dd9281449f373929cea9073
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 127}
+  - name: woman_white_Frame_1
+    originalName: 
+    pivot: {x: 0.25925925, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 84
+      width: 27
+      height: 31
+    spriteID: 7308cf2fbeed1704a8cabc29f741582b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 84}
+  - name: woman_white_Frame_2
+    originalName: 
+    pivot: {x: 0.25925925, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 4
+      width: 27
+      height: 32
+    spriteID: 84738f141dcc5ff4eb15fd8c7c90ab81
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 4}
+  - name: woman_white_Frame_3
+    originalName: 
+    pivot: {x: 0.25925925, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 168
+      width: 27
+      height: 33
+    spriteID: f620e4dfa9a946d45a0467255a1a10c8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 168}
+  - name: woman_white_Frame_4
+    originalName: 
+    pivot: {x: 0.25925925, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 44
+      width: 27
+      height: 32
+    spriteID: 51c6f07c8ff3a5945b94bd4991369820
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 44}
+  - name: woman_white_Frame_5
+    originalName: 
+    pivot: {x: 0.28571427, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 86
+      width: 28
+      height: 33
+    spriteID: ae555c98f549fc247998df65101d9999
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 86}
+  - name: woman_white_Frame_6
+    originalName: 
+    pivot: {x: 0.3103448, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 45
+      width: 29
+      height: 33
+    spriteID: a50052215323aae46b3e4d1947c12650
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 45}
+  - name: woman_white_Frame_7
+    originalName: 
+    pivot: {x: 0.37500003, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 32
+      height: 33
+    spriteID: 16498d6800988c14dabe8072d9dc5418
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: woman_white_Frame_8
+    originalName: 
+    pivot: {x: 0.25925925, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 209
+      width: 27
+      height: 33
+    spriteID: 47bbb470b53db1a4182a2cab1c482e33
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 209}
+  - name: woman_white_Frame_9
+    originalName: 
+    pivot: {x: 0.13043472, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 86
+      width: 23
+      height: 32
+    spriteID: 08695dc5736d8244e8ed87bfcce210e4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 86}
+  - name: woman_white_Frame_10
+    originalName: 
+    pivot: {x: 0.15384622, y: -0.14285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 147
+      y: 4
+      width: 26
+      height: 28
+    spriteID: 9e3b9097eaae51f4ba61ab04ea7760c6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 147, y: 4}
+  - name: woman_white_Frame_11
+    originalName: 
+    pivot: {x: 0.23076926, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 162
+      width: 26
+      height: 32
+    spriteID: a54e62f23474a0140b39627962ccd954
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 162}
+  - name: woman_white_Frame_12
+    originalName: 
+    pivot: {x: 0.13043472, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 126
+      width: 23
+      height: 32
+    spriteID: cc628bf54cafdab419b3674fd0271ce9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 126}
+  - name: woman_white_Frame_13
+    originalName: 
+    pivot: {x: 0.12499993, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 162
+      width: 24
+      height: 32
+    spriteID: 02d03869ebc2dd840b01777d72b8b312
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 112, y: 162}
+  - name: woman_white_Frame_14
+    originalName: 
+    pivot: {x: 0.19230774, y: -0.10344827}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 202
+      width: 26
+      height: 29
+    spriteID: 51ef3946a5ca8b74c9c627abce34d132
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 112, y: 202}
+  - name: woman_white_Frame_15
+    originalName: 
+    pivot: {x: 0.20000003, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 81
+      width: 25
+      height: 32
+    spriteID: 928e4fbc67ae2fe4c9d5e765a31947f8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 112, y: 81}
+  - name: woman_white_Frame_16
+    originalName: 
+    pivot: {x: 0.13043472, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 166
+      width: 23
+      height: 31
+    spriteID: e51234055b6e8824cb7e1462c7f1fb9f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 166}
+  - name: woman_white_Frame_17
+    originalName: 
+    pivot: {x: 0.09090905, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 205
+      width: 22
+      height: 32
+    spriteID: c25fd0e18bedf024e97f999a1db15464
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 205}
+  - name: woman_white_Frame_18
+    originalName: 
+    pivot: {x: 0.12499993, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 121
+      width: 24
+      height: 33
+    spriteID: eb656644b5a8dca4091d61a2aeb2ce8d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 112, y: 121}
+  - name: woman_white_Frame_19
+    originalName: 
+    pivot: {x: 0.22222224, y: -0.10000001}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 4
+      width: 27
+      height: 30
+    spriteID: 9be1a8d9f47abd8499420b5a72795c9a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 112, y: 4}
+  - name: woman_white_Frame_20
+    originalName: 
+    pivot: {x: 0.20000003, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 202
+      width: 25
+      height: 33
+    spriteID: 9d1a76d17d9b56c45b739573a89da2eb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 202}
+  - name: woman_white_Frame_21
+    originalName: 
+    pivot: {x: 0.16666672, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 47
+      width: 24
+      height: 31
+    spriteID: d74088bc509d9614ca1cbaac05027046
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 47}
+  - name: woman_white_Frame_22
+    originalName: 
+    pivot: {x: 0.20000003, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 4
+      width: 25
+      height: 35
+    spriteID: 725b1378a948a444a816e8315a8d1a97
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 4}
+  - name: woman_white_Frame_23
+    originalName: 
+    pivot: {x: 0.25925925, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 123
+      width: 27
+      height: 31
+    spriteID: fcd28d6445338f348b9e36a3b00badb4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 123}
+  - name: woman_white_Frame_24
+    originalName: 
+    pivot: {x: 0.23076926, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 42
+      width: 26
+      height: 31
+    spriteID: fadf4c5c9c3dd934a9d58bd2cdfc0322
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 112, y: 42}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 1164691210
+    name: woman_white
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: woman_white_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 49
+        y: 0
+        width: 27
+        height: 33
+      spriteId: 7d583caa4dd9281449f373929cea9073
+    - name: woman_white_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 49
+        y: 0
+        width: 27
+        height: 31
+      spriteId: 7308cf2fbeed1704a8cabc29f741582b
+    - name: woman_white_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 49
+        y: 0
+        width: 27
+        height: 32
+      spriteId: 84738f141dcc5ff4eb15fd8c7c90ab81
+    - name: woman_white_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 49
+        y: 0
+        width: 27
+        height: 33
+      spriteId: f620e4dfa9a946d45a0467255a1a10c8
+    - name: woman_white_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 49
+        y: 0
+        width: 27
+        height: 32
+      spriteId: 51c6f07c8ff3a5945b94bd4991369820
+    - name: woman_white_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 48
+        y: 0
+        width: 28
+        height: 33
+      spriteId: ae555c98f549fc247998df65101d9999
+    - name: woman_white_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 47
+        y: 0
+        width: 29
+        height: 33
+      spriteId: a50052215323aae46b3e4d1947c12650
+    - name: woman_white_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 44
+        y: 0
+        width: 32
+        height: 33
+      spriteId: 16498d6800988c14dabe8072d9dc5418
+    - name: woman_white_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 49
+        y: 0
+        width: 27
+        height: 33
+      spriteId: 47bbb470b53db1a4182a2cab1c482e33
+    - name: woman_white_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 53
+        y: 0
+        width: 23
+        height: 32
+      spriteId: 08695dc5736d8244e8ed87bfcce210e4
+    - name: woman_white_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 52
+        y: 4
+        width: 26
+        height: 28
+      spriteId: 9e3b9097eaae51f4ba61ab04ea7760c6
+    - name: woman_white_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 50
+        y: 0
+        width: 26
+        height: 32
+      spriteId: a54e62f23474a0140b39627962ccd954
+    - name: woman_white_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 53
+        y: 0
+        width: 23
+        height: 32
+      spriteId: cc628bf54cafdab419b3674fd0271ce9
+    - name: woman_white_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 53
+        y: 0
+        width: 24
+        height: 32
+      spriteId: 02d03869ebc2dd840b01777d72b8b312
+    - name: woman_white_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 51
+        y: 3
+        width: 26
+        height: 29
+      spriteId: 51ef3946a5ca8b74c9c627abce34d132
+    - name: woman_white_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 51
+        y: 0
+        width: 25
+        height: 32
+      spriteId: 928e4fbc67ae2fe4c9d5e765a31947f8
+    - name: woman_white_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 53
+        y: 0
+        width: 23
+        height: 31
+      spriteId: e51234055b6e8824cb7e1462c7f1fb9f
+    - name: woman_white_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 54
+        y: 0
+        width: 22
+        height: 32
+      spriteId: c25fd0e18bedf024e97f999a1db15464
+    - name: woman_white_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 53
+        y: 0
+        width: 24
+        height: 33
+      spriteId: eb656644b5a8dca4091d61a2aeb2ce8d
+    - name: woman_white_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 50
+        y: 3
+        width: 27
+        height: 30
+      spriteId: 9be1a8d9f47abd8499420b5a72795c9a
+    - name: woman_white_Frame_20
+      frameIndex: 20
+      cellRect:
+        x: 51
+        y: 0
+        width: 25
+        height: 33
+      spriteId: 9d1a76d17d9b56c45b739573a89da2eb
+    - name: woman_white_Frame_21
+      frameIndex: 21
+      cellRect:
+        x: 52
+        y: 0
+        width: 24
+        height: 31
+      spriteId: d74088bc509d9614ca1cbaac05027046
+    - name: woman_white_Frame_22
+      frameIndex: 22
+      cellRect:
+        x: 51
+        y: 0
+        width: 25
+        height: 35
+      spriteId: 725b1378a948a444a816e8315a8d1a97
+    - name: woman_white_Frame_23
+      frameIndex: 23
+      cellRect:
+        x: 49
+        y: 0
+        width: 27
+        height: 31
+      spriteId: fcd28d6445338f348b9e36a3b00badb4
+    - name: woman_white_Frame_24
+      frameIndex: 24
+      cellRect:
+        x: 50
+        y: 0
+        width: 26
+        height: 31
+      spriteId: fadf4c5c9c3dd934a9d58bd2cdfc0322
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 112, y: 64}

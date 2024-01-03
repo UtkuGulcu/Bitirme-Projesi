@@ -32,6 +32,11 @@ public class PlayerAnimation : MonoBehaviour
             PlayIdleAnimation();
         }
     }
+  
+    public void PlayJumpAnimation()
+    {
+        animator.SetTrigger(jumpID);
+    }
 
     public void PlayFallingAnimation()
     {
@@ -42,12 +47,7 @@ public class PlayerAnimation : MonoBehaviour
     {
         animator.SetTrigger(fallingFinishedID);
     }
-    
-    public void PlayJumpAnimation()
-    {
-        animator.SetTrigger(jumpID);
-    }
-
+  
     public void PlayShootAnimation()
     {
         animator.SetTrigger(shootID);

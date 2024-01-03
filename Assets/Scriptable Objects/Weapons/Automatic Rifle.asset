@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a3873204932620449bfbe54f3eff585, type: 3}
+  m_Name: Automatic Rifle
+  m_EditorClassIdentifier: 
+  weaponPrefab: {fileID: 1057058260460638448, guid: 943c96648eb6c984e89ee4ba42530219, type: 3}
+  bulletPrefab: {fileID: 2908404974713194023, guid: ed7b8c93db038004694522d86a802cf7, type: 3}
+  weaponName: Automatic Rifle
+  idleLocalPosition: {x: 0.145, y: 0.1535, z: 0}
+  bulletSpeed: 19
+  impactForce: 1750
+  fireRate: 0.2
+  hasUnlimitedAmmo: 0
+  maxAmmo: 30

@@ -35,7 +35,7 @@
                 {
                     "name": "Drop Down",
                     "type": "Button",
-                    "id": "06b7e8fb-8926-4684-91ff-52879024e4c9",
+                    "id": "24fdb008-34bf-4925-b51d-06e87bed38ef",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -133,22 +133,22 @@
                 },
                 {
                     "name": "",
-                    "id": "79cb7193-3467-47a9-8c07-2ed8a4c208ec",
-                    "path": "<Keyboard>/downArrow",
+                    "id": "243389cb-ecef-441a-9eab-47e09c980204",
+                    "path": "<Gamepad>/leftStick/down",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "Gamepad",
                     "action": "Drop Down",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "5e57eaf2-1a55-4187-810b-1f7c1101bafe",
-                    "path": "<Gamepad>/leftStick/down",
+                    "id": "2fde1e1a-c57d-4045-8d6c-cbd3c9cee364",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Keyboard",
                     "action": "Drop Down",
                     "isComposite": false,
                     "isPartOfComposite": false

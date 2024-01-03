@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private WeaponSO weaponData;
-    
+    private WeaponSO weaponData;
     private Rigidbody2D rb;
     private PlayerController.Direction direction;
+    private LobbyPreferences.PlayerPreferences.Team ownerTeam;
     private float timer;
     private const float TIMER_MAX = 5f;
 
@@ -27,11 +27,14 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    public void Setup(PlayerController.Direction playerDirection)
+    public void Setup(PlayerController.Direction playerDirection, WeaponSO weaponData, LobbyPreferences.PlayerPreferences.Team team)
     {
+        this.weaponData = weaponData;
+        this.ownerTeam = team;
+        
         direction = playerDirection;
         
-        Vector2 force = transform.right * weaponData.bulletSpeed * Time.deltaTime;
+        Vector2 force = transform.right * weaponData.bulletSpeed;
         
         if (direction == PlayerController.Direction.Left)
         {
@@ -55,5 +58,10 @@ public class Bullet : MonoBehaviour
     public void DestroySelf()
     {
         Destroy(gameObject);
+    }
+
+    public LobbyPreferences.PlayerPreferences.Team GetOwnerTeam()
+    {
+        return ownerTeam;
     }
 }

@@ -4,16 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 public class PlayerManager : MonoBehaviour
 {
     public struct PlayerData
     {
         public InputDevice inputDevice;
-        public int playerID;    
+        public int playerID;
+        public GameObject prefab;
+        public LobbyPreferences.PlayerPreferences.Team team;
         public int health;
-        public string weaponName;
     }
     
     public static PlayerManager Instance { get; private set; }
@@ -45,14 +45,16 @@ public class PlayerManager : MonoBehaviour
     {
         playerDataDictionary = new Dictionary<int, PlayerData>();
         
-        foreach (InputDevice inputDevice in LobbyPreferences.GetActiveDevices())
+        foreach (var playerPreference in LobbyPreferences.GetPlayerPreferencesList())
         {
             currentID++;
 
-            PlayerData playerData = new PlayerData
+            var playerData = new PlayerData
             {
-                inputDevice = inputDevice,
+                inputDevice = playerPreference.inputDevice,
                 playerID = currentID,
+                prefab = playerPreference.playerPrefab,
+                team = playerPreference.team,
                 health = 3
             };
             
@@ -96,7 +98,8 @@ public class PlayerManager : MonoBehaviour
     
     private void SpawnPlayerWithID(PlayerData playerData)
     {
-        GameObject selectedPrefab = playerPrefabArray[playerData.playerID - 1];
+        //GameObject selectedPrefab = playerPrefabArray[playerData.playerID - 1];
+        GameObject selectedPrefab = playerData.prefab;
         Transform selectedSpawnPositionTransform = spawnPositionTransformArray[playerData.playerID - 1];
         
         GameObject spawnedObject = Instantiate(selectedPrefab, selectedSpawnPositionTransform.position, Quaternion.identity);
@@ -105,7 +108,7 @@ public class PlayerManager : MonoBehaviour
         playerInput.SwitchCurrentControlScheme(playerData.inputDevice);
 
         Player player = spawnedObject.GetComponent<Player>();
-        player.SetPlayerID(playerData.playerID);
+        player.SetPlayerData(playerData.playerID, playerData.team);
     }
 
     private bool CanPlayerSpawn(int ID)
@@ -118,11 +121,11 @@ public class PlayerManager : MonoBehaviour
         return playerDataDictionary.Values.ToList();
     }
 
-    public void UpdateWeaponNameWithID(int playerID, string weaponName)
-    {
-        PlayerData tempData = playerDataDictionary[playerID];
-        tempData.weaponName = weaponName;
-        playerDataDictionary[playerID] = tempData;
-        PlayerInformationUI.Instance.UpdatePanels();
-    }
+    // public void UpdateWeaponNameWithID(int playerID, string weaponName)
+    // {
+    //     PlayerData tempData = playerDataDictionary[playerID];
+    //     tempData.weaponName = weaponName;
+    //     playerDataDictionary[playerID] = tempData;
+    //     PlayerInformationUI.Instance.UpdatePanels();
+    // }
 }

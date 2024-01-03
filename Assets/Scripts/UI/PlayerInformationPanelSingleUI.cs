@@ -15,7 +15,17 @@ public class PlayerInformationPanelSingleUI : MonoBehaviour
     {
         playerNameText.text = $"Player {playerData.playerID}";
         healthCountText.text = playerData.health.ToString();
-        weaponNameText.text = playerData.weaponName;
-        //bulletCountText.text = playerData.
+        //weaponNameText.text = playerData.weaponName;
+    }
+
+    public void UpdateWeaponInfo(string newWeaponName, int ammo)
+    {
+        weaponNameText.text = newWeaponName;
+        bulletCountText.text = ammo.ToString();
+    }
+
+    public void UpdateBulletCount(int remainingAmmo)
+    {
+        bulletCountText.text = remainingAmmo.ToString();
     }
 }
