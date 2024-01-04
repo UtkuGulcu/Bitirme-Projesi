@@ -10,6 +10,9 @@ public class LobbyManager : MonoBehaviour
     [SerializeField] private GameEventSO OnPlayerJoined;
     [SerializeField] private GameEventSO OnPlayerChangedTeam;
     [SerializeField] private GameEventSO OnPlayerChangedSkin;
+    [SerializeField] private GameEventSO OnPlayerSetReady;
+    [SerializeField] private GameEventSO OnPlayerSetNotReady;
+    [SerializeField] private GameEventSO OnPlayerLeft;
     
     [Header("References")]
     [SerializeField] private CharacterDataSO characterData;
@@ -42,18 +45,36 @@ public class LobbyManager : MonoBehaviour
         InputSystem.onActionChange -= InputSystem_OnActionChange;
     }
 
-    private void Update()
+    private void Start()
     {
-        if (keyboard != null)
-        {
-            ReadKeyboardInput();
-        }
-
-        ReadGamepadInput();
+        LobbyPreferences.ClearMemory();
     }
 
-    private void ReadKeyboardInput()
+    private void Update()
     {
+        if (keyboard == null)
+        {
+            ReadUnregisteredKeyboardInput();
+        }
+        else
+        {
+            ReadRegisteredKeyboardInput();
+        }
+
+        ReadRegisteredGamepadInput();
+    }
+
+    private void ReadUnregisteredKeyboardInput()
+    {
+        // if (Keyboard.current.escapeKey)
+        // {
+        //     
+        // }
+    }
+
+    private void ReadRegisteredKeyboardInput()
+    {
+        
         if (keyboard.spaceKey.wasPressedThisFrame)
         {
             LobbyPreferences.ChangeTeamOfPlayer(keyboard);
@@ -79,12 +100,33 @@ public class LobbyManager : MonoBehaviour
             var onPlayerChangedSkinEventArgs = GameEventArgs.GetOnPlayerChangedSkinEventArgs(false, keyboard);
             OnPlayerChangedSkin.Raise(this,onPlayerChangedSkinEventArgs);
         }
+
+        if (keyboard.enterKey.wasPressedThisFrame)
+        {
+            LobbyPreferences.SetPlayerReady(keyboard);
+            OnPlayerSetReady.Raise(this, keyboard);
+        }
+
+        if (keyboard.escapeKey.wasPressedThisFrame && LobbyPreferences.IsPlayerReady(keyboard))
+        {
+            StartCoroutine(LobbyPreferences.SetPlayerNotReady(keyboard));
+            OnPlayerSetNotReady.Raise(this, keyboard);
+        }
+
+        if (keyboard.escapeKey.wasPressedThisFrame && !LobbyPreferences.IsPlayerReady(keyboard))
+        {
+            LobbyPreferences.DeletePlayerPreferences(keyboard);
+            OnPlayerLeft.Raise(this, keyboard);
+            keyboard = null;
+        }
     }
 
-    private void ReadGamepadInput()
+    private void ReadRegisteredGamepadInput()
     {
-        foreach (var gamepad in joinedGamepadList)
+        for (int i = joinedGamepadList.Count - 1; i >= 0; i--)
         {
+            Gamepad gamepad = joinedGamepadList[i];
+            
             if (gamepad.buttonWest.wasPressedThisFrame)
             {
                 LobbyPreferences.ChangeTeamOfPlayer(gamepad);
@@ -109,6 +151,27 @@ public class LobbyManager : MonoBehaviour
                 
                 var onPlayerChangedSkinEventArgs = GameEventArgs.GetOnPlayerChangedSkinEventArgs(false, gamepad);
                 OnPlayerChangedSkin.Raise(this,onPlayerChangedSkinEventArgs);
+            }
+
+            if (gamepad.buttonSouth.wasPressedThisFrame)
+            {
+                LobbyPreferences.SetPlayerReady(gamepad);
+                OnPlayerSetReady.Raise(this, gamepad);
+            }
+
+            if (gamepad.buttonEast.wasPressedThisFrame && LobbyPreferences.IsPlayerReady(gamepad))
+            {
+                Debug.Log("Circle ready");
+                StartCoroutine(LobbyPreferences.SetPlayerNotReady(gamepad));
+                OnPlayerSetNotReady.Raise(this, gamepad);
+            }
+            
+            if (gamepad.buttonEast.wasPressedThisFrame && !LobbyPreferences.IsPlayerReady(gamepad))
+            {
+                Debug.Log("Circle not ready");
+                OnPlayerLeft.Raise(this, gamepad);
+                LobbyPreferences.DeletePlayerPreferences(gamepad);
+                joinedGamepadList.Remove(gamepad);
             }
         }
     }
@@ -136,13 +199,13 @@ public class LobbyManager : MonoBehaviour
         switch (inputDevice)
         {
             case Gamepad gamepad when gamepad.buttonSouth.wasPressedThisFrame && LobbyPreferences.TryToAddDevice(inputDevice, characterData.GetDefaultSkinPrefab()):
-                joinedGamepadList.Add(gamepad);
+                StartCoroutine(AddGamepadToList(gamepad));
                 OnPlayerJoined.Raise(this, gamepad);
                 break;
             
             case Keyboard keyboardDevice when keyboardDevice.enterKey.wasPressedThisFrame && LobbyPreferences.TryToAddDevice(keyboardDevice, characterData.GetDefaultSkinPrefab()):
-                keyboard = keyboardDevice;
-                OnPlayerJoined.Raise(this, keyboard);
+                StartCoroutine(SetKeyboard(keyboardDevice));
+                OnPlayerJoined.Raise(this, keyboardDevice);
                 break;
         }
     }
@@ -153,5 +216,22 @@ public class LobbyManager : MonoBehaviour
                        (keyboard != null && joinedGamepadList.Count < 3);
 
         return canJoin;
+    }
+
+    private IEnumerator AddGamepadToList(Gamepad gamepad)
+    {
+        yield return new WaitForEndOfFrame();
+        joinedGamepadList.Add(gamepad);
+    }
+    
+    private IEnumerator SetKeyboard(Keyboard keyboard)
+    {
+        yield return new WaitForEndOfFrame();
+        this.keyboard = keyboard;
+    }
+
+    private bool IsGamepadRegistered(Gamepad gamepad)
+    {
+        return joinedGamepadList.Contains(gamepad);
     }
 }

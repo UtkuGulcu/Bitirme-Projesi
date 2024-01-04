@@ -17,10 +17,11 @@ public class PlayerManager : MonoBehaviour
     }
     
     public static PlayerManager Instance { get; private set; }
-    
+
+    [Header("Events")]
+    [SerializeField] private GameEventSO OnGameEnded;
     
     [Header("References")]
-    [SerializeField] private GameObject[] playerPrefabArray;
     [SerializeField] private Transform[] spawnPositionTransformArray;
 
     private Dictionary<int, PlayerData> playerDataDictionary;
@@ -55,7 +56,7 @@ public class PlayerManager : MonoBehaviour
                 playerID = currentID,
                 prefab = playerPreference.playerPrefab,
                 team = playerPreference.team,
-                health = 3
+                health = 1
             };
             
             playerDataDictionary.Add(currentID, playerData);
@@ -86,6 +87,40 @@ public class PlayerManager : MonoBehaviour
         {
             StartCoroutine(WaitToSpawn(deadPlayerID));
         }
+
+        var winnerTeam = LobbyPreferences.PlayerPreferences.Team.Blue;
+        
+        if (TryGetWinnerTeam(ref winnerTeam))
+        {
+            OnGameEnded.Raise(this, winnerTeam.ToString());
+        }
+    }
+
+    private bool TryGetWinnerTeam(ref LobbyPreferences.PlayerPreferences.Team winnerTeam)
+    {
+        var alivePlayersDataList = new List<PlayerData>();
+        
+        foreach (var playerData in playerDataDictionary.Values)
+        {
+            if (playerData.health > 0)
+            {
+                alivePlayersDataList.Add(playerData);
+            }
+        }
+
+        var aliveTeam = alivePlayersDataList[0].team;
+        
+        foreach (var alivePlayerData in alivePlayersDataList)
+        {
+            if (alivePlayerData.team != aliveTeam)
+            {
+                return false;
+            }
+        }
+
+        winnerTeam = aliveTeam;
+        return true;
+        
     }
 
     private IEnumerator WaitToSpawn(int deadPlayerID)
@@ -98,7 +133,6 @@ public class PlayerManager : MonoBehaviour
     
     private void SpawnPlayerWithID(PlayerData playerData)
     {
-        //GameObject selectedPrefab = playerPrefabArray[playerData.playerID - 1];
         GameObject selectedPrefab = playerData.prefab;
         Transform selectedSpawnPositionTransform = spawnPositionTransformArray[playerData.playerID - 1];
         
@@ -120,12 +154,4 @@ public class PlayerManager : MonoBehaviour
     {
         return playerDataDictionary.Values.ToList();
     }
-
-    // public void UpdateWeaponNameWithID(int playerID, string weaponName)
-    // {
-    //     PlayerData tempData = playerDataDictionary[playerID];
-    //     tempData.weaponName = weaponName;
-    //     playerDataDictionary[playerID] = tempData;
-    //     PlayerInformationUI.Instance.UpdatePanels();
-    // }
 }

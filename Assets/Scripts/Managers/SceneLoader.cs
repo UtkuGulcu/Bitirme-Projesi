@@ -9,4 +9,9 @@ public static class SceneLoader
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    public static void LoadMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

@@ -8,58 +8,88 @@ using UnityEngine.UI;
 
 public class LobbyFrameUI : MonoBehaviour
 {
+    public class FrameData
+    {
+        public InputDevice inputDevice;
+        public Color color;
+        public Sprite characterSprite;
+    }
+    
     [Header("References")]
     [SerializeField] private GameObject passiveStateGameObjects;
     [SerializeField] private GameObject activeStateGameObjects;
     [SerializeField] private Image backgroundImage;
     [SerializeField] private Image characterImage;
-    //[SerializeField] private TeamColorsSO teamColorsSO;
+    [SerializeField] private GameObject readyIcon;
 
-
-    private InputDevice inputDevice;
-    private Color currentColor;
+    private FrameData frameData;
     
     private void Start()
     {
         passiveStateGameObjects.SetActive(true);
         activeStateGameObjects.SetActive(false);
+        DisableReadyVisual();
     }
 
-    public void EnableActiveState(InputDevice inputDevice, Color defaultTeamColor, Sprite defaultCharacterSprite)
+    public void EnableActiveState(FrameData newFrameData)
     {
-        this.inputDevice = inputDevice;
-        currentColor = defaultTeamColor;
-        backgroundImage.color = currentColor;
+        frameData = newFrameData;
         
-        characterImage.sprite = defaultCharacterSprite;
+        backgroundImage.color = frameData.color;
+        
+        characterImage.sprite = frameData.characterSprite;
 
         passiveStateGameObjects.SetActive(false);
         activeStateGameObjects.SetActive(true);
     }
 
+    public void EnablePassiveState()
+    {
+        frameData = null;
+        passiveStateGameObjects.SetActive(true);
+        activeStateGameObjects.SetActive(false);
+    }
+
     public void ChangeTeam(TeamColorsSO teamColorsSO)
     {
-        currentColor = teamColorsSO.GetNextColor(currentColor);
-        backgroundImage.color = currentColor;
+        frameData.color = teamColorsSO.GetNextColor(frameData.color);
+        backgroundImage.color = frameData.color;
     }
 
     public void SwitchToNextSkin(CharacterDataSO characterDataSO)
     {
-        characterImage.sprite = characterDataSO.GetNextCharacterSprite(characterImage.sprite);
+        frameData.characterSprite = characterDataSO.GetNextCharacterSprite(characterImage.sprite);
+        characterImage.sprite = frameData.characterSprite;
     }
 
     public void SwitchToPreviousSkin(CharacterDataSO characterDataSO)
     {
-        characterImage.sprite = characterDataSO.GetPreviousCharacterSprite(characterImage.sprite);
+        frameData.characterSprite = characterDataSO.GetPreviousCharacterSprite(characterImage.sprite);
+        characterImage.sprite = frameData.characterSprite;
     }
 
     public bool IsValidFrame(InputDevice inputDevice)
     {
-        return this.inputDevice == inputDevice;
+        return frameData.inputDevice == inputDevice;
     }
 
-    public Color GetCurrentColor()
+    public bool IsActive()
     {
-        return currentColor;
+        return frameData != null;
+    }
+
+    public void EnableReadyVisual()
+    {
+        readyIcon.SetActive(true);
+    }
+    
+    public void DisableReadyVisual()
+    {
+        readyIcon.SetActive(false);
+    }
+
+    public FrameData GetFrameData()
+    {
+        return frameData;
     }
 }

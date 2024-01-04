@@ -10,9 +10,9 @@ public static class LobbyPreferences
     {
         public enum Team
         {
+            Blue,
             Red,
             Green,
-            Blue,
             Yellow
         }
 
@@ -20,6 +20,7 @@ public static class LobbyPreferences
         public Team team;
         public GameObject playerPrefab;
         public string playerName;           //Maybe?
+        public bool isReady;
 
         public void SwitchToNextTeam()
         {
@@ -65,49 +66,83 @@ public static class LobbyPreferences
 
     private static bool IsDeviceRegistered(InputDevice inputDevice)
     {
-        foreach (var playerPreference in playerPreferencesList)
-        {
-            if (playerPreference.inputDevice == inputDevice)
-            {
-                return true;
-            }
-        }
-        
-        return false;
+        return FindPlayerPreferencesWithInputDevice(inputDevice) != null;
     }
 
     public static void ChangeTeamOfPlayer(InputDevice inputDevice)
     {
-        foreach (var playerPreferences in playerPreferencesList)
-        {
-            if (playerPreferences.inputDevice == inputDevice)
-            {
-                playerPreferences.SwitchToNextTeam();
-            }
-        }
+        var playerPreferences = FindPlayerPreferencesWithInputDevice(inputDevice);
+        playerPreferences.SwitchToNextTeam();
     }
 
     public static void ChangeSkinOfPlayer(InputDevice inputDevice, GameObject newPrefab)
     {
-        foreach (var playerPreferences in playerPreferencesList)
-        {
-            if (playerPreferences.inputDevice == inputDevice)
-            {
-                playerPreferences.ChangeSkin(newPrefab);
-            }
-        }
+        var playerPreferences = FindPlayerPreferencesWithInputDevice(inputDevice);
+        playerPreferences.ChangeSkin(newPrefab);
     }
 
     public static GameObject GetPrefabOfPlayer(InputDevice inputDevice)
+    {
+        var playerPreferences = FindPlayerPreferencesWithInputDevice(inputDevice);
+        return playerPreferences.playerPrefab;
+    }
+
+    public static void SetPlayerReady(InputDevice inputDevice)
+    {
+        var playerPreferences = FindPlayerPreferencesWithInputDevice(inputDevice);
+        playerPreferences.isReady = true;
+        
+        StartGameIfReady();
+    }
+    
+    public static IEnumerator SetPlayerNotReady(InputDevice inputDevice)
+    {
+        yield return new WaitForEndOfFrame();
+        
+        var playerPreferences = FindPlayerPreferencesWithInputDevice(inputDevice);
+        playerPreferences.isReady = false;
+    }
+
+    public static bool IsPlayerReady(InputDevice inputDevice)
+    {
+        var playerPreferences = FindPlayerPreferencesWithInputDevice(inputDevice);
+        return playerPreferences.isReady;
+    }
+
+    private static void StartGameIfReady()
+    {
+        foreach (var playerPreferences in playerPreferencesList)
+        {
+            if (!playerPreferences.isReady)
+            {
+                return;
+            }
+        }
+        
+        SceneLoader.LoadNextScene();
+    }
+
+    public static void ClearMemory()
+    {
+        playerPreferencesList.Clear();
+    }
+
+    private static PlayerPreferences FindPlayerPreferencesWithInputDevice(InputDevice inputDevice)
     {
         foreach (var playerPreferences in playerPreferencesList)
         {
             if (playerPreferences.inputDevice == inputDevice)
             {
-                return playerPreferences.playerPrefab;
+                return playerPreferences;
             }
         }
 
         return null;
+    }
+
+    public static void DeletePlayerPreferences(InputDevice inputDevice)
+    {
+        var playerPreferences = FindPlayerPreferencesWithInputDevice(inputDevice);
+        playerPreferencesList.Remove(playerPreferences);
     }
 }

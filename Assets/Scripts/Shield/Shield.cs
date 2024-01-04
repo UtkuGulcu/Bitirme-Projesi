@@ -5,9 +5,7 @@ using UnityEngine;
 
 public class Shield : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] private Player player;
-
+    private Player player;
     private ShieldAnimation shieldAnimation;
     private float duration;
     private float timer;
@@ -16,6 +14,7 @@ public class Shield : MonoBehaviour
     private void Awake()
     {
         shieldAnimation = GetComponent<ShieldAnimation>();
+        player = transform.parent.GetComponent<Player>();
     }
 
     private void Update()
