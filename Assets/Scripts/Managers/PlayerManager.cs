@@ -48,8 +48,6 @@ public class PlayerManager : MonoBehaviour
         
         foreach (var playerPreference in LobbyPreferences.GetPlayerPreferencesList())
         {
-            currentID++;
-
             var playerData = new PlayerData
             {
                 inputDevice = playerPreference.inputDevice,
@@ -60,6 +58,7 @@ public class PlayerManager : MonoBehaviour
             };
             
             playerDataDictionary.Add(currentID, playerData);
+            currentID++;
         }
         
         SpawnAllPlayers();
@@ -134,7 +133,7 @@ public class PlayerManager : MonoBehaviour
     private void SpawnPlayerWithID(PlayerData playerData)
     {
         GameObject selectedPrefab = playerData.prefab;
-        Transform selectedSpawnPositionTransform = spawnPositionTransformArray[playerData.playerID - 1];
+        Transform selectedSpawnPositionTransform = spawnPositionTransformArray[playerData.playerID];
         
         GameObject spawnedObject = Instantiate(selectedPrefab, selectedSpawnPositionTransform.position, Quaternion.identity);
 

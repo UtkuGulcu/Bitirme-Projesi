@@ -156,7 +156,7 @@ public class PlayerController : MonoBehaviour
     {
         pushForce = force;
         pushTimer = 0;
-        rb.AddForce(Vector2.right * force * Time.fixedDeltaTime, ForceMode2D.Impulse);
+        rb.AddForce(Vector2.right * force, ForceMode2D.Impulse);
     }
     
     public bool IsMoving()

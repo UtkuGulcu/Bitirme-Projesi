@@ -17,7 +17,7 @@ MonoBehaviour:
   weaponName: Automatic Rifle
   idleLocalPosition: {x: 0.145, y: 0.1535, z: 0}
   bulletSpeed: 19
-  impactForce: 1750
+  impactForce: 40
   fireRate: 0.2
   hasUnlimitedAmmo: 0
   maxAmmo: 30

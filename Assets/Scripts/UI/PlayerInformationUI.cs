@@ -60,7 +60,7 @@ public class PlayerInformationUI : MonoBehaviour
     public void UpdateWeaponInfo(object sender, object data)
     {
         var args = data as GameEventArgs.OnWeaponPickedEventArgs;
-        int index = args.playerID - 1;
+        int index = args.playerID;
         string weaponName = args.weaponName;
         int ammo = args.ammo;
         
@@ -70,7 +70,7 @@ public class PlayerInformationUI : MonoBehaviour
     public void UpdateBulletCount(object sender, object data)
     {
         var args = data as GameEventArgs.OnShotFiredEventArgs;
-        int index = args.playerID - 1;
+        int index = args.playerID;
         panelList[index].UpdateBulletCount(args.remainingAmmo);
     }
 }

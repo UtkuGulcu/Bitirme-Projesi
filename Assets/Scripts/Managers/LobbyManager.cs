@@ -61,15 +61,16 @@ public class LobbyManager : MonoBehaviour
             ReadRegisteredKeyboardInput();
         }
 
+        ReadUnregisteredGamepadInput();
         ReadRegisteredGamepadInput();
     }
 
     private void ReadUnregisteredKeyboardInput()
     {
-        // if (Keyboard.current.escapeKey)
-        // {
-        //     
-        // }
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            SceneLoader.LoadMainMenu();
+        }
     }
 
     private void ReadRegisteredKeyboardInput()
@@ -161,18 +162,26 @@ public class LobbyManager : MonoBehaviour
 
             if (gamepad.buttonEast.wasPressedThisFrame && LobbyPreferences.IsPlayerReady(gamepad))
             {
-                Debug.Log("Circle ready");
                 StartCoroutine(LobbyPreferences.SetPlayerNotReady(gamepad));
                 OnPlayerSetNotReady.Raise(this, gamepad);
             }
             
             if (gamepad.buttonEast.wasPressedThisFrame && !LobbyPreferences.IsPlayerReady(gamepad))
             {
-                Debug.Log("Circle not ready");
                 OnPlayerLeft.Raise(this, gamepad);
                 LobbyPreferences.DeletePlayerPreferences(gamepad);
                 joinedGamepadList.Remove(gamepad);
             }
+        }
+    }
+
+    private void ReadUnregisteredGamepadInput()
+    {
+        Gamepad gamepad = Gamepad.current;
+        
+        if (gamepad.buttonEast.wasPressedThisFrame && !IsGamepadRegistered(gamepad))
+        {
+            SceneLoader.LoadMainMenu();
         }
     }
 
