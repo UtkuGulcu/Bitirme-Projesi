@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(menuName = "Scriptable Objects/Team Colors")]
 public class TeamColorsSO : ScriptableObject
@@ -9,7 +10,7 @@ public class TeamColorsSO : ScriptableObject
     [Serializable]
     public class TeamColor
     {
-        public string name;
+        public string teamName;
         public Color color;
     }
 
@@ -35,5 +36,18 @@ public class TeamColorsSO : ScriptableObject
     public Color GetDefaultColor()
     {
         return teamColorArray[0].color;
+    }
+
+    public Color GetColorWithName(string teamName)
+    {
+        foreach (var teamColor in teamColorArray)
+        {
+            if (teamColor.teamName == teamName)
+            {
+                return teamColor.color;
+            }
+        }
+
+        return GetDefaultColor();
     }
 }

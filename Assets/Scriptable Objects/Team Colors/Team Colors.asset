@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Team Colors
   m_EditorClassIdentifier: 
   teamColorArray:
-  - name: Blue
+  - teamName: Blue
     color: {r: 0, g: 0.43529412, b: 0.99215686, a: 1}
-  - name: Red
+  - teamName: Red
     color: {r: 0.9254902, g: 0, b: 0, a: 1}
-  - name: Green
+  - teamName: Green
     color: {r: 0.08627451, g: 0.8666667, b: 0.011764706, a: 1}
-  - name: Yellow
+  - teamName: Yellow
     color: {r: 0.972549, g: 0.972549, b: 0.16862746, a: 1}

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class PickupTrigger : MonoBehaviour
+public class WeaponPickupTrigger : MonoBehaviour
 {
     [SerializeField] private WeaponSO[] weaponArray;
 
@@ -19,7 +19,7 @@ public class PickupTrigger : MonoBehaviour
 
     private WeaponSO GetRandomWeapon()
     {
-        int randomIndex = Random.Range(0, weaponArray.Length - 1);
+        int randomIndex = Random.Range(0, weaponArray.Length);
         return weaponArray[randomIndex];
     }
 }

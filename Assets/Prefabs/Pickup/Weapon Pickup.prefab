@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7988320892722185790}
+  - component: {fileID: 2348357080173885550}
   - component: {fileID: 4791947772434591908}
   m_Layer: 0
   m_Name: Visuals
@@ -26,12 +27,26 @@ Transform:
   m_GameObject: {fileID: 1729776642210098126}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.10342, y: -3.6609, z: 0}
+  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6995108624388793892}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2348357080173885550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729776642210098126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7f3cdd6583e52459d5cbefdc7b92b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAirSprite: {fileID: -8979625153702311364, guid: 58dcd838641e8fb498c8b54ee810e9e6, type: 3}
+  onGroundSprite: {fileID: -2429984532925586945, guid: fbef6dbc62a92b343a4680ba025ee147, type: 3}
 --- !u!212 &4791947772434591908
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -73,7 +88,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -8979625153702311364, guid: 58dcd838641e8fb498c8b54ee810e9e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,7 +113,7 @@ GameObject:
   - component: {fileID: 8492694794027019461}
   - component: {fileID: 5606677989337844635}
   m_Layer: 0
-  m_Name: Pickup
+  m_Name: Weapon Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,7 +150,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0.2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -179,7 +194,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.08249962, y: 0.05499977}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -190,7 +205,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.0274999, y: 1.0000001}
   m_EdgeRadius: 0
 --- !u!114 &8492694794027019461
 MonoBehaviour:
@@ -204,7 +219,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e5938b2fbf11124f87e6bfa2dfa56e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 0.52
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  basePickupVisual: {fileID: 2348357080173885550}
+  distance: 0.5
 --- !u!114 &5606677989337844635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,3 +239,4 @@ MonoBehaviour:
   weaponArray:
   - {fileID: 11400000, guid: de050f7e0f4516140814f18a8cd91bb6, type: 2}
   - {fileID: 11400000, guid: 0827f6099f96c5e4a943385ff17e4502, type: 2}
+  - {fileID: 11400000, guid: 19abfb4f0ad39c64e8a0735073068138, type: 2}

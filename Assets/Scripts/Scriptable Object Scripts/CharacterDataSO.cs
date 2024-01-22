@@ -11,6 +11,7 @@ public class CharacterDataSO : ScriptableObject
     {
         public GameObject prefab;
         public Sprite lobbySprite;
+        public Sprite gamePortraitSprite;
     }
     
     public Character[] characterArray;
@@ -94,6 +95,46 @@ public class CharacterDataSO : ScriptableObject
 
         return characterArray[index].lobbySprite;
     }
+    
+    public Sprite GetNextPortraitSprite(Sprite currentSprite)
+    {
+        int index = 0;
+        
+        foreach (var character in characterArray)
+        {
+            if (currentSprite == character.gamePortraitSprite)
+            {
+                index = Array.IndexOf(characterArray, character);
+            }
+        }
+
+        index++;
+        index %= characterArray.Length;
+
+        return characterArray[index].gamePortraitSprite;
+    }
+    
+    public Sprite GetPreviousPortraitSprite(Sprite currentSprite)
+    {
+        int index = 0;
+        
+        foreach (var character in characterArray)
+        {
+            if (currentSprite == character.gamePortraitSprite)
+            {
+                index = Array.IndexOf(characterArray, character);
+            }
+        }
+
+        index--;
+        
+        if (index < 0)
+        {
+            index = characterArray.Length - 1;
+        }
+
+        return characterArray[index].gamePortraitSprite;
+    }
 
     public Sprite GetDefaultCharacterSprite()
     {
@@ -103,5 +144,10 @@ public class CharacterDataSO : ScriptableObject
     public GameObject GetDefaultSkinPrefab()
     {
         return characterArray[0].prefab;
+    }
+
+    public Sprite GetDefaultPortraitSprite()
+    {
+        return characterArray[0].gamePortraitSprite;
     }
 }

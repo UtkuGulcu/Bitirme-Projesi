@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-public class LobbyFrameUI : MonoBehaviour
+public class LobbyFrameSingleUI : MonoBehaviour
 {
     public class FrameData
     {
@@ -16,38 +16,52 @@ public class LobbyFrameUI : MonoBehaviour
     }
     
     [Header("References")]
-    [SerializeField] private GameObject passiveStateGameObjects;
+    [SerializeField] private GameObject passiveStateWithEnterGameObjects;
+    [SerializeField] private GameObject passiveStateWithoutEnterGameObjects;
     [SerializeField] private GameObject activeStateGameObjects;
     [SerializeField] private Image backgroundImage;
     [SerializeField] private Image characterImage;
     [SerializeField] private GameObject readyIcon;
 
     private FrameData frameData;
+    private bool isActive;
     
     private void Start()
     {
-        passiveStateGameObjects.SetActive(true);
+        passiveStateWithEnterGameObjects.SetActive(true);
         activeStateGameObjects.SetActive(false);
         DisableReadyVisual();
     }
 
     public void EnableActiveState(FrameData newFrameData)
     {
+        isActive = true;
         frameData = newFrameData;
         
         backgroundImage.color = frameData.color;
-        
         characterImage.sprite = frameData.characterSprite;
 
-        passiveStateGameObjects.SetActive(false);
         activeStateGameObjects.SetActive(true);
+        
+        passiveStateWithEnterGameObjects.SetActive(false);
+        passiveStateWithoutEnterGameObjects.SetActive(false);
     }
 
     public void EnablePassiveState()
     {
         frameData = null;
-        passiveStateGameObjects.SetActive(true);
-        activeStateGameObjects.SetActive(false);
+        isActive = false;
+
+        // if (LobbyManager.Instance.IsKeyboardRegistered())
+        // {
+        //     EnablePassiveStateWithoutKeyboardIcon();
+        // }
+        // else
+        // {
+        //     EnablePassiveStateWithKeyboardIcon();
+        // }
+        
+        UpdatePassiveState();
     }
 
     public void ChangeTeam(TeamColorsSO teamColorsSO)
@@ -91,5 +105,52 @@ public class LobbyFrameUI : MonoBehaviour
     public FrameData GetFrameData()
     {
         return frameData;
+    }
+
+    // public void EnablePassiveStateWithKeyboardIcon()
+    // {
+    //     if (isActive)
+    //     {
+    //         return;
+    //     }
+    //
+    //     passiveStateWithEnterGameObjects.SetActive(true);
+    //     
+    //     passiveStateWithoutEnterGameObjects.SetActive(false);
+    //     activeStateGameObjects.SetActive(false);
+    // }
+    //
+    // public void EnablePassiveStateWithoutKeyboardIcon()
+    // {
+    //     if (isActive)
+    //     {
+    //         return;
+    //     }
+    //
+    //     passiveStateWithoutEnterGameObjects.SetActive(true);
+    //     
+    //     passiveStateWithEnterGameObjects.SetActive(false);
+    //     activeStateGameObjects.SetActive(false);
+    // }
+
+    public void UpdatePassiveState()
+    {
+        if (isActive)
+        {
+            return;
+        }
+        
+        activeStateGameObjects.SetActive(false);
+        
+        if (LobbyManager.Instance.IsKeyboardRegistered())
+        {
+            passiveStateWithEnterGameObjects.SetActive(false);
+            passiveStateWithoutEnterGameObjects.SetActive(true);
+        }
+        else
+        {
+            passiveStateWithoutEnterGameObjects.SetActive(false);
+            passiveStateWithEnterGameObjects.SetActive(true);
+        }
     }
 }

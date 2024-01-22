@@ -11,6 +11,7 @@ public class PlayerInformationUI : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject playerInformationPanelTemplate;
     [SerializeField] private Transform playerInformationPanelParentTransform;
+    [SerializeField] private TeamColorsSO teamColorsSO;
 
     private List<PlayerInformationPanelSingleUI> panelList;
 
@@ -41,7 +42,7 @@ public class PlayerInformationUI : MonoBehaviour
             spawnedObject.SetActive(true);
 
             PlayerInformationPanelSingleUI playerInformationPanelSingleUI = spawnedObject.GetComponent<PlayerInformationPanelSingleUI>();
-            playerInformationPanelSingleUI.UpdateText(playerData);
+            playerInformationPanelSingleUI.SetupPanel(playerData);
             panelList.Add(playerInformationPanelSingleUI);
         }
     }

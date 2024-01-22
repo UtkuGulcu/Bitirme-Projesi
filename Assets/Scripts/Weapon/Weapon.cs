@@ -84,4 +84,16 @@ public class Weapon : MonoBehaviour
     {
         return ammo;
     }
+
+    public float GetKickForce(PlayerController.Direction direction)
+    {
+        float kickForce = weaponData.kickForce;
+
+        if (direction == PlayerController.Direction.Right)
+        {
+            kickForce *= -1;
+        }
+
+        return kickForce;
+    }
 }

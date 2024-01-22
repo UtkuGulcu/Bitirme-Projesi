@@ -15,9 +15,13 @@ MonoBehaviour:
   characterArray:
   - prefab: {fileID: 7713155510728474460, guid: 8bc015c5499400d449e9b99425a1a529, type: 3}
     lobbySprite: {fileID: -4337194609617754884, guid: 204f04a2e2b2c3348b75b7bd626a46ac, type: 3}
+    gamePortraitSprite: {fileID: -6435391190971220326, guid: ddc7d481d2ef0264e88fd4871f9de616, type: 3}
   - prefab: {fileID: 967060180328010035, guid: e9560efb659ece1429d6e53c3736675c, type: 3}
     lobbySprite: {fileID: 7397255546095594607, guid: 5b0f5eb22f7fd7649bc605fee8461944, type: 3}
+    gamePortraitSprite: {fileID: -9046504478011532107, guid: ba42159e803c4684a8a7f637bb086076, type: 3}
   - prefab: {fileID: 2731570238725002163, guid: 2b8d14119b008c24eaf7c652b89c57dd, type: 3}
     lobbySprite: {fileID: -7491893313394915046, guid: 4847db902a3b74b498ea47de66cb5393, type: 3}
+    gamePortraitSprite: {fileID: 7486029695501358655, guid: 8083e812994d819439cefbbf67d0d7ca, type: 3}
   - prefab: {fileID: 6478132122428968681, guid: bc05d11b47336a641987de9ae9b4f2ba, type: 3}
     lobbySprite: {fileID: 5210001042200939289, guid: ad7692e4fc260674baed995dd7e1df71, type: 3}
+    gamePortraitSprite: {fileID: 7132189989042403206, guid: e2e0c6dbe82ea6548abb8264d8891d87, type: 3}

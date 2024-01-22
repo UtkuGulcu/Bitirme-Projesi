@@ -3,33 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
 public class LobbyUI : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private LobbyFrameUI[] frameArray;
-    [SerializeField] private Button startGameButton;
+    [SerializeField] private LobbyFrameSingleUI[] frameArray;
     [SerializeField] private TeamColorsSO teamColorsSO;
     [SerializeField] private CharacterDataSO characterDataSO;
 
     private int nextAvailableIndex;
-
-    private void Start()
-    {
-        startGameButton.onClick.AddListener(OnStartGameButtonClicked);
-    }
-
-    private void OnStartGameButtonClicked()
-    {
-        SceneLoader.LoadNextScene();
-    }
-
     public void EnableFrame(object sender, object data)
     {
         var inputDevice = data as InputDevice;
 
-        var frameData = new LobbyFrameUI.FrameData
+        var frameData = new LobbyFrameSingleUI.FrameData
         {
             inputDevice = inputDevice,
             color = teamColorsSO.GetDefaultColor(),
@@ -38,12 +25,23 @@ public class LobbyUI : MonoBehaviour
         
         frameArray[nextAvailableIndex].EnableActiveState(frameData);
         nextAvailableIndex++;
+        
+        if (inputDevice is Keyboard)
+        {
+            UpdatePassiveStateOfFrames();
+        }
     }
 
     public void DisableFrame(object sender, object data)
     {
         nextAvailableIndex--;
         var inputDevice = data as InputDevice;
+        
+        if (inputDevice is Keyboard)
+        {
+            UpdatePassiveStateOfFrames();
+        }
+        
         int disabledFrameIndex = FindIndexOfFrame(inputDevice);
 
         for (int i = 0; i < frameArray.Length; i++)
@@ -83,52 +81,52 @@ public class LobbyUI : MonoBehaviour
 
     public void ChangeTeamOfFrame(object sender, object data)
     {
-        LobbyFrameUI frameWithInputDevice = FindFrameWithInputDevice(data as InputDevice);
-        frameWithInputDevice.ChangeTeam(teamColorsSO);
+        LobbyFrameSingleUI frameSingleWithInputDevice = FindFrameWithInputDevice(data as InputDevice);
+        frameSingleWithInputDevice.ChangeTeam(teamColorsSO);
     }
 
     public void ChangeSkinOfFrame(object sender, object data)
     {
         var args = data as GameEventArgs.OnPlayerChangedSkinEventArgs;
-        LobbyFrameUI frameWithInputDevice = FindFrameWithInputDevice(args.inputDevice);
+        LobbyFrameSingleUI frameSingleWithInputDevice = FindFrameWithInputDevice(args.inputDevice);
 
         if (args.hasSwitchedToNextSkin)
         {
-            frameWithInputDevice.SwitchToNextSkin(characterDataSO);
+            frameSingleWithInputDevice.SwitchToNextSkin(characterDataSO);
         }
         else
         {
-            frameWithInputDevice.SwitchToPreviousSkin(characterDataSO);
+            frameSingleWithInputDevice.SwitchToPreviousSkin(characterDataSO);
         }
         
     }
 
     public void SetFrameReady(object sender, object data)
     {
-        LobbyFrameUI frameWithInputDevice = FindFrameWithInputDevice(data as InputDevice);
-        frameWithInputDevice.EnableReadyVisual();
+        LobbyFrameSingleUI frameSingleWithInputDevice = FindFrameWithInputDevice(data as InputDevice);
+        frameSingleWithInputDevice.EnableReadyVisual();
     }
     
     public void SetFrameNotReady(object sender, object data)
     {
-        LobbyFrameUI frameWithInputDevice = FindFrameWithInputDevice(data as InputDevice);
-        frameWithInputDevice.DisableReadyVisual();
+        LobbyFrameSingleUI frameSingleWithInputDevice = FindFrameWithInputDevice(data as InputDevice);
+        frameSingleWithInputDevice.DisableReadyVisual();
     }
 
-    private LobbyFrameUI FindFrameWithInputDevice(InputDevice inputDevice)
+    private LobbyFrameSingleUI FindFrameWithInputDevice(InputDevice inputDevice)
     {
-        LobbyFrameUI tempFrame = null;
+        LobbyFrameSingleUI tempFrameSingle = null;
         
         foreach (var frame in frameArray)
         {
             if (frame.IsValidFrame(inputDevice))
             {
-                tempFrame = frame;
+                tempFrameSingle = frame;
                 break;
             }
         }
 
-        return tempFrame;
+        return tempFrameSingle;
     }
 
     private int FindIndexOfFrame(InputDevice inputDevice)
@@ -142,5 +140,29 @@ public class LobbyUI : MonoBehaviour
         }
 
         return -1;
+    }
+
+    // private void EnablePassiveStateWithKeyboardOfFrames()
+    // {
+    //     foreach (var frame in frameArray)
+    //     {
+    //         frame.EnablePassiveStateWithKeyboardIcon();
+    //     }
+    // }
+    //
+    // private void EnablePassiveStateWithoutKeyboardOfFrames()
+    // {
+    //     foreach (var frame in frameArray)
+    //     {
+    //         frame.EnablePassiveStateWithoutKeyboardIcon();
+    //     }
+    // }
+
+    private void UpdatePassiveStateOfFrames()
+    {
+        foreach (var frame in frameArray)
+        {
+            frame.UpdatePassiveState();
+        }
     }
 }

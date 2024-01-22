@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] private GameEventSO OnPlayerDied;
     [SerializeField] private GameEventSO OnWeaponPicked;
     [SerializeField] private GameEventSO OnShotFired;
+    [SerializeField] private GameEventSO OnPlayerPickedHealth;
 
     [Header("References")]
     [SerializeField] private PlayerAnimation playerAnimation;
@@ -54,6 +55,7 @@ public class Player : MonoBehaviour
 
         weapon.Fire(playerController.GetDirection(), team);
 
+        HandleWeaponKick();
         RaiseShotFiredEvent();
 
         if (groundedCheck.IsGrounded())
@@ -160,5 +162,22 @@ public class Player : MonoBehaviour
     public bool IsTeamMate(LobbyPreferences.PlayerPreferences.Team comparedTeam)
     {
         return team == comparedTeam;
+    }
+
+    private void HandleWeaponKick()
+    {
+        float kickForce = weapon.GetKickForce(playerController.GetDirection());
+
+        if (playerController.IsMoving())
+        {
+            kickForce /= 2;
+        }
+        
+        playerController.GetPushed(kickForce);
+    }
+
+    public void IncreaseHealth()
+    {
+        OnPlayerPickedHealth.Raise(this, playerID);
     }
 }

@@ -19,5 +19,6 @@ MonoBehaviour:
   bulletSpeed: 15
   impactForce: 50
   fireRate: 0.5
+  kickForce: 5
   hasUnlimitedAmmo: 0
   maxAmmo: 7

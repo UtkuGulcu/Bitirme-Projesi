@@ -13,6 +13,8 @@ public class PlayerManager : MonoBehaviour
         public int playerID;
         public GameObject prefab;
         public LobbyPreferences.PlayerPreferences.Team team;
+        public Color teamColor;
+        public Sprite portraitSprite;
         public int health;
     }
     
@@ -23,6 +25,7 @@ public class PlayerManager : MonoBehaviour
     
     [Header("References")]
     [SerializeField] private Transform[] spawnPositionTransformArray;
+    [SerializeField] private TeamColorsSO teamColorsSO;
 
     private Dictionary<int, PlayerData> playerDataDictionary;
     private int currentID;
@@ -48,12 +51,16 @@ public class PlayerManager : MonoBehaviour
         
         foreach (var playerPreference in LobbyPreferences.GetPlayerPreferencesList())
         {
+            var teamColor = teamColorsSO.GetColorWithName(playerPreference.team.ToString());
+            
             var playerData = new PlayerData
             {
                 inputDevice = playerPreference.inputDevice,
                 playerID = currentID,
                 prefab = playerPreference.playerPrefab,
                 team = playerPreference.team,
+                teamColor = teamColor,
+                portraitSprite = playerPreference.portrait,
                 health = 1
             };
             
@@ -93,6 +100,17 @@ public class PlayerManager : MonoBehaviour
         {
             OnGameEnded.Raise(this, winnerTeam.ToString());
         }
+    }
+
+    public void OnPlayerPickedHealth(object sender, object data)
+    {
+        int playerID = (int)data;
+        
+        PlayerData tempData = playerDataDictionary[playerID];
+        tempData.health++;
+        playerDataDictionary[playerID] = tempData;
+        
+        PlayerInformationUI.Instance.UpdatePanels();
     }
 
     private bool TryGetWinnerTeam(ref LobbyPreferences.PlayerPreferences.Team winnerTeam)

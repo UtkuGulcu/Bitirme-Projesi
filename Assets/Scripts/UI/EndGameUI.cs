@@ -7,8 +7,11 @@ using UnityEngine.InputSystem;
 
 public class EndGameUI : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private GameObject visuals;
     [SerializeField] private TMP_Text winnerTeamText;
+    [SerializeField] private TeamColorsSO teamColorsSO;
+    [SerializeField] private BaseUIPanelAnimation baseUIPanelAnimation;
 
     private bool hasGameEnded;
 
@@ -37,11 +40,24 @@ public class EndGameUI : MonoBehaviour
         winnerTeamName = winnerTeamName.ToUpper();
         
         winnerTeamText.text = $"{winnerTeamName} TEAM";
+        SetTeamColor(winnerTeamName);
         
         EnableVisuals();
+        baseUIPanelAnimation.PlayOpenAnimation();
         
         hasGameEnded = true;
         Time.timeScale = 0f;
+    }
+
+    private void SetTeamColor(string winnerTeamName)
+    {
+        foreach (var teamColor in teamColorsSO.teamColorArray)
+        {
+            if (string.Equals(teamColor.teamName, winnerTeamName, StringComparison.CurrentCultureIgnoreCase))
+            {
+                winnerTeamText.color = teamColor.color;
+            }
+        }
     }
     
     private void EnableVisuals()

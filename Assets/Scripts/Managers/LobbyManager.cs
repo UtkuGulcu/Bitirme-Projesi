@@ -35,16 +35,6 @@ public class LobbyManager : MonoBehaviour
         }
     }
 
-    private void OnEnable()
-    {
-        InputSystem.onActionChange += InputSystem_OnActionChange;
-    }
-
-    private void OnDisable()
-    {
-        InputSystem.onActionChange -= InputSystem_OnActionChange;
-    }
-
     private void Start()
     {
         LobbyPreferences.ClearMemory();
@@ -60,9 +50,22 @@ public class LobbyManager : MonoBehaviour
         {
             ReadRegisteredKeyboardInput();
         }
+        
+        var gamepad = Gamepad.current;
 
-        ReadUnregisteredGamepadInput();
-        ReadRegisteredGamepadInput();
+        if (gamepad == null)
+        {
+            return;
+        }
+
+        if (IsGamepadRegistered(gamepad))
+        {
+            ReadRegisteredGamepadInput();
+        }
+        else
+        {
+            ReadUnregisteredGamepadInput();
+        }
     }
 
     private void ReadUnregisteredKeyboardInput()
@@ -71,11 +74,16 @@ public class LobbyManager : MonoBehaviour
         {
             SceneLoader.LoadMainMenu();
         }
+
+        if (Keyboard.current.enterKey.wasPressedThisFrame && CanJoin() && LobbyPreferences.TryToAddDevice(Keyboard.current, characterData.GetDefaultSkinPrefab(), characterData.GetDefaultPortraitSprite()))
+        {
+            keyboard = Keyboard.current;
+            OnPlayerJoined.Raise(this, keyboard);
+        }
     }
 
     private void ReadRegisteredKeyboardInput()
     {
-        
         if (keyboard.spaceKey.wasPressedThisFrame)
         {
             LobbyPreferences.ChangeTeamOfPlayer(keyboard);
@@ -85,8 +93,12 @@ public class LobbyManager : MonoBehaviour
         if (keyboard.rightArrowKey.wasPressedThisFrame)
         {
             GameObject currentPrefab = LobbyPreferences.GetPrefabOfPlayer(keyboard);
+            Sprite currentSprite = LobbyPreferences.GetPortraitOfPlayer(keyboard);
+
             GameObject nextPrefab = characterData.GetNextPrefab(currentPrefab);
-            LobbyPreferences.ChangeSkinOfPlayer(keyboard, nextPrefab);
+            Sprite nextSprite = characterData.GetNextPortraitSprite(currentSprite);
+            
+            LobbyPreferences.ChangeSkinOfPlayer(keyboard, nextPrefab, nextSprite);
 
             var onPlayerChangedSkinEventArgs = GameEventArgs.GetOnPlayerChangedSkinEventArgs(true, keyboard);
             OnPlayerChangedSkin.Raise(this,onPlayerChangedSkinEventArgs);
@@ -95,8 +107,12 @@ public class LobbyManager : MonoBehaviour
         if (keyboard.leftArrowKey.wasPressedThisFrame)
         {
             GameObject currentPrefab = LobbyPreferences.GetPrefabOfPlayer(keyboard);
+            Sprite currentSprite = LobbyPreferences.GetPortraitOfPlayer(keyboard);
+            
             GameObject previousPrefab = characterData.GetPreviousPrefab(currentPrefab);
-            LobbyPreferences.ChangeSkinOfPlayer(keyboard, previousPrefab);
+            Sprite previousSprite = characterData.GetPreviousPortraitSprite(currentSprite);
+            
+            LobbyPreferences.ChangeSkinOfPlayer(keyboard, previousPrefab, previousSprite);
                 
             var onPlayerChangedSkinEventArgs = GameEventArgs.GetOnPlayerChangedSkinEventArgs(false, keyboard);
             OnPlayerChangedSkin.Raise(this,onPlayerChangedSkinEventArgs);
@@ -116,9 +132,11 @@ public class LobbyManager : MonoBehaviour
 
         if (keyboard.escapeKey.wasPressedThisFrame && !LobbyPreferences.IsPlayerReady(keyboard))
         {
-            LobbyPreferences.DeletePlayerPreferences(keyboard);
-            OnPlayerLeft.Raise(this, keyboard);
+            var tempKeyboard = keyboard;
             keyboard = null;
+            
+            LobbyPreferences.DeletePlayerPreferences(tempKeyboard);
+            OnPlayerLeft.Raise(this, tempKeyboard);
         }
     }
 
@@ -137,8 +155,12 @@ public class LobbyManager : MonoBehaviour
             if (gamepad.leftStick.right.wasPressedThisFrame)
             {
                 GameObject currentPrefab = LobbyPreferences.GetPrefabOfPlayer(gamepad);
+                Sprite currentSprite = LobbyPreferences.GetPortraitOfPlayer(gamepad);
+
                 GameObject nextPrefab = characterData.GetNextPrefab(currentPrefab);
-                LobbyPreferences.ChangeSkinOfPlayer(gamepad, nextPrefab);
+                Sprite nextSprite = characterData.GetNextPortraitSprite(currentSprite);
+            
+                LobbyPreferences.ChangeSkinOfPlayer(gamepad, nextPrefab, nextSprite);
 
                 var onPlayerChangedSkinEventArgs = GameEventArgs.GetOnPlayerChangedSkinEventArgs(true, gamepad);
                 OnPlayerChangedSkin.Raise(this,onPlayerChangedSkinEventArgs);
@@ -147,8 +169,12 @@ public class LobbyManager : MonoBehaviour
             if (gamepad.leftStick.left.wasPressedThisFrame)
             {
                 GameObject currentPrefab = LobbyPreferences.GetPrefabOfPlayer(gamepad);
+                Sprite currentSprite = LobbyPreferences.GetPortraitOfPlayer(gamepad);
+            
                 GameObject previousPrefab = characterData.GetPreviousPrefab(currentPrefab);
-                LobbyPreferences.ChangeSkinOfPlayer(gamepad, previousPrefab);
+                Sprite previousSprite = characterData.GetPreviousPortraitSprite(currentSprite);
+            
+                LobbyPreferences.ChangeSkinOfPlayer(gamepad, previousPrefab, previousSprite);
                 
                 var onPlayerChangedSkinEventArgs = GameEventArgs.GetOnPlayerChangedSkinEventArgs(false, gamepad);
                 OnPlayerChangedSkin.Raise(this,onPlayerChangedSkinEventArgs);
@@ -177,45 +203,22 @@ public class LobbyManager : MonoBehaviour
 
     private void ReadUnregisteredGamepadInput()
     {
-        Gamepad gamepad = Gamepad.current;
+        var gamepad = Gamepad.current;
+
+        if (gamepad == null || IsGamepadRegistered(gamepad))
+        {
+            return;
+        }
         
-        if (gamepad.buttonEast.wasPressedThisFrame && !IsGamepadRegistered(gamepad))
+        if (gamepad.buttonEast.wasPressedThisFrame)
         {
             SceneLoader.LoadMainMenu();
         }
-    }
 
-    private void InputSystem_OnActionChange(object arg1, InputActionChange change)
-    {
-        if (change != InputActionChange.ActionPerformed)
+        if (gamepad.buttonSouth.wasPressedThisFrame && CanJoin() && LobbyPreferences.TryToAddDevice(gamepad, characterData.GetDefaultSkinPrefab(), characterData.GetDefaultPortraitSprite()))
         {
-            return;
-        }
-
-        InputAction inputAction = arg1 as InputAction;
-        InputDevice inputDevice = inputAction.activeControl.device;
-
-        if (inputDevice.name == "Mouse")
-        {
-            return;
-        }
-
-        if (!CanJoin())
-        {
-            return;
-        }
-
-        switch (inputDevice)
-        {
-            case Gamepad gamepad when gamepad.buttonSouth.wasPressedThisFrame && LobbyPreferences.TryToAddDevice(inputDevice, characterData.GetDefaultSkinPrefab()):
-                StartCoroutine(AddGamepadToList(gamepad));
-                OnPlayerJoined.Raise(this, gamepad);
-                break;
-            
-            case Keyboard keyboardDevice when keyboardDevice.enterKey.wasPressedThisFrame && LobbyPreferences.TryToAddDevice(keyboardDevice, characterData.GetDefaultSkinPrefab()):
-                StartCoroutine(SetKeyboard(keyboardDevice));
-                OnPlayerJoined.Raise(this, keyboardDevice);
-                break;
+            joinedGamepadList.Add(gamepad);
+            OnPlayerJoined.Raise(this, gamepad);
         }
     }
 
@@ -226,21 +229,14 @@ public class LobbyManager : MonoBehaviour
 
         return canJoin;
     }
-
-    private IEnumerator AddGamepadToList(Gamepad gamepad)
-    {
-        yield return new WaitForEndOfFrame();
-        joinedGamepadList.Add(gamepad);
-    }
     
-    private IEnumerator SetKeyboard(Keyboard keyboard)
-    {
-        yield return new WaitForEndOfFrame();
-        this.keyboard = keyboard;
-    }
-
     private bool IsGamepadRegistered(Gamepad gamepad)
     {
         return joinedGamepadList.Contains(gamepad);
+    }
+
+    public bool IsKeyboardRegistered()
+    {
+        return keyboard != null;
     }
 }

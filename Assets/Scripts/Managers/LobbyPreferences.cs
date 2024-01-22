@@ -19,6 +19,7 @@ public static class LobbyPreferences
         public InputDevice inputDevice;
         public Team team;
         public GameObject playerPrefab;
+        public Sprite portrait;
         public string playerName;           //Maybe?
         public bool isReady;
 
@@ -31,9 +32,10 @@ public static class LobbyPreferences
             team = nextTeam;
         }
 
-        public void ChangeSkin(GameObject newPrefab)
+        public void ChangeSkin(GameObject newPrefab, Sprite portraitSprite)
         {
             playerPrefab = newPrefab;
+            portrait = portraitSprite;
         }
     }
 
@@ -44,7 +46,7 @@ public static class LobbyPreferences
         return playerPreferencesList;
     }
 
-    public static bool TryToAddDevice(InputDevice inputDevice, GameObject defaultSkinPrefab)
+    public static bool TryToAddDevice(InputDevice inputDevice, GameObject defaultSkinPrefab, Sprite defaultPortraitSprite)
     {
         if (IsDeviceRegistered(inputDevice) || inputDevice == null)
         {
@@ -56,7 +58,8 @@ public static class LobbyPreferences
             team = PlayerPreferences.Team.Blue,
             inputDevice = inputDevice,
             playerName = "Player",
-            playerPrefab = defaultSkinPrefab
+            playerPrefab = defaultSkinPrefab,
+            portrait = defaultPortraitSprite
         };
 
         playerPreferencesList.Add(playerPreferences);
@@ -75,16 +78,22 @@ public static class LobbyPreferences
         playerPreferences.SwitchToNextTeam();
     }
 
-    public static void ChangeSkinOfPlayer(InputDevice inputDevice, GameObject newPrefab)
+    public static void ChangeSkinOfPlayer(InputDevice inputDevice, GameObject newPrefab, Sprite portraitSprite)
     {
         var playerPreferences = FindPlayerPreferencesWithInputDevice(inputDevice);
-        playerPreferences.ChangeSkin(newPrefab);
+        playerPreferences.ChangeSkin(newPrefab, portraitSprite);
     }
 
     public static GameObject GetPrefabOfPlayer(InputDevice inputDevice)
     {
         var playerPreferences = FindPlayerPreferencesWithInputDevice(inputDevice);
         return playerPreferences.playerPrefab;
+    }
+    
+    public static Sprite GetPortraitOfPlayer(InputDevice inputDevice)
+    {
+        var playerPreferences = FindPlayerPreferencesWithInputDevice(inputDevice);
+        return playerPreferences.portrait;
     }
 
     public static void SetPlayerReady(InputDevice inputDevice)
@@ -144,5 +153,10 @@ public static class LobbyPreferences
     {
         var playerPreferences = FindPlayerPreferencesWithInputDevice(inputDevice);
         playerPreferencesList.Remove(playerPreferences);
+    }
+
+    public static int GetPlayerCount()
+    {
+        return playerPreferencesList.Count;
     }
 }

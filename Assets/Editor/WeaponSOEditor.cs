@@ -11,6 +11,7 @@ public class WeaponSOEditor : Editor
     private SerializedProperty bulletSpeedProp;
     private SerializedProperty impactForceProp;
     private SerializedProperty fireRateProp;
+    private SerializedProperty kickForceProp;
     private SerializedProperty hasUnlimitedAmmoProp;
     private SerializedProperty maxAmmoProp;
 
@@ -23,6 +24,7 @@ public class WeaponSOEditor : Editor
         bulletSpeedProp = serializedObject.FindProperty("bulletSpeed");
         impactForceProp = serializedObject.FindProperty("impactForce");
         fireRateProp = serializedObject.FindProperty("fireRate");
+        kickForceProp = serializedObject.FindProperty("kickForce");
         hasUnlimitedAmmoProp = serializedObject.FindProperty("hasUnlimitedAmmo");
         maxAmmoProp = serializedObject.FindProperty("maxAmmo");
     }
@@ -38,6 +40,7 @@ public class WeaponSOEditor : Editor
         EditorGUILayout.PropertyField(bulletSpeedProp);
         EditorGUILayout.PropertyField(impactForceProp);
         EditorGUILayout.PropertyField(fireRateProp);
+        EditorGUILayout.PropertyField(kickForceProp);
         
         EditorGUILayout.PropertyField(hasUnlimitedAmmoProp);
 

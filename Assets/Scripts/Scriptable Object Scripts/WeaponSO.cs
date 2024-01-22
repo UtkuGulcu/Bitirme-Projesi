@@ -16,6 +16,7 @@ public class WeaponSO : ScriptableObject
     public float bulletSpeed;
     public float impactForce;
     public float fireRate;
+    public float kickForce;
     public bool hasUnlimitedAmmo;
     public int maxAmmo;
 }

@@ -300,6 +300,7 @@ MonoBehaviour:
   OnPlayerDied: {fileID: 11400000, guid: 4f540a3277d919b48a0dbf58539214fa, type: 2}
   OnWeaponPicked: {fileID: 11400000, guid: f72ef36be9e483a4abaf7b6db3c68718, type: 2}
   OnShotFired: {fileID: 11400000, guid: eda91bd1bed3f194e84a161f162d1ed7, type: 2}
+  OnPlayerPickedHealth: {fileID: 11400000, guid: b7bf7fb41d651af4eb482ff228c77207, type: 2}
   playerAnimation: {fileID: 740440807975823260}
   shield: {fileID: 2405911039825412102}
   groundedCheck: {fileID: 3539687631088359355}
