@@ -61,7 +61,7 @@ public class PlayerManager : MonoBehaviour
                 team = playerPreference.team,
                 teamColor = teamColor,
                 portraitSprite = playerPreference.portrait,
-                health = 1
+                health = 5
             };
             
             playerDataDictionary.Add(currentID, playerData);
