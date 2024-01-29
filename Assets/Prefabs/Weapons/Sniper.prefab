@@ -196,6 +196,7 @@ MonoBehaviour:
   weaponData: {fileID: 11400000, guid: 0827f6099f96c5e4a943385ff17e4502, type: 2}
   barrelTransform: {fileID: 5805251276921173051}
   weaponAnimation: {fileID: 1890272659327448977}
+  OnWeaponShot: {fileID: 11400000, guid: ceef413f671763f4f8231879ba0cd148, type: 2}
 --- !u!1 &8504670841482165077
 GameObject:
   m_ObjectHideFlags: 0

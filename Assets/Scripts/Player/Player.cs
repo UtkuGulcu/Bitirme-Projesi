@@ -129,7 +129,7 @@ public class Player : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void EnableShield(float duration)
+    public void EnableShield(float duration)
     {
         isShielded = true;
         shield.Initialize(duration);
@@ -179,5 +179,17 @@ public class Player : MonoBehaviour
     public void IncreaseHealth()
     {
         OnPlayerPickedHealth.Raise(this, playerID);
+    }
+
+    public void IncreaseMovementSpeed()
+    {
+        StartCoroutine(ChangeMovementSpeed());
+        
+        IEnumerator ChangeMovementSpeed()
+        {
+            playerController.SetMovementSpeed(15);
+            yield return Helpers.GetWait(7);
+            playerController.SetMovementSpeed(10);
+        }
     }
 }

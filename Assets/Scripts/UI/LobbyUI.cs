@@ -3,15 +3,50 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class LobbyUI : MonoBehaviour
 {
+    public enum Level
+    {
+        Arena,
+        Space
+    }
+    
+    public static LobbyUI Instance { get; private set; }
+    
     [Header("References")]
     [SerializeField] private LobbyFrameSingleUI[] frameArray;
     [SerializeField] private TeamColorsSO teamColorsSO;
     [SerializeField] private CharacterDataSO characterDataSO;
+    [SerializeField] private Image mapFrameImage;
+    [SerializeField] private Sprite arenaLevelSprite;
+    [SerializeField] private Sprite spaceLevelSprite;
 
     private int nextAvailableIndex;
+    private Level selectedLevel;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Debug.LogError("There are more than one LobbyUIs");
+            Destroy(gameObject);
+        }
+    }
+
+    private void Update()
+    {
+        if (Keyboard.current.tabKey.wasPressedThisFrame || Gamepad.current.buttonNorth.wasPressedThisFrame)
+        {
+            ChangeMapFrame();
+        }
+    }
+
     public void EnableFrame(object sender, object data)
     {
         var inputDevice = data as InputDevice;
@@ -142,27 +177,27 @@ public class LobbyUI : MonoBehaviour
         return -1;
     }
 
-    // private void EnablePassiveStateWithKeyboardOfFrames()
-    // {
-    //     foreach (var frame in frameArray)
-    //     {
-    //         frame.EnablePassiveStateWithKeyboardIcon();
-    //     }
-    // }
-    //
-    // private void EnablePassiveStateWithoutKeyboardOfFrames()
-    // {
-    //     foreach (var frame in frameArray)
-    //     {
-    //         frame.EnablePassiveStateWithoutKeyboardIcon();
-    //     }
-    // }
-
     private void UpdatePassiveStateOfFrames()
     {
         foreach (var frame in frameArray)
         {
             frame.UpdatePassiveState();
         }
+    }
+    
+    private void ChangeMapFrame()
+    {
+        Level[] values = (Level[])Enum.GetValues(typeof(Level));
+        int currentIndex = Array.IndexOf(values, selectedLevel);
+            
+        Level nextLevel = currentIndex < values.Length - 1 ? values[currentIndex + 1] : values[0];
+        selectedLevel = nextLevel;
+
+        mapFrameImage.sprite = selectedLevel == Level.Arena ? arenaLevelSprite : spaceLevelSprite;
+    }
+
+    public Level GetSelectedLevel()
+    {
+        return selectedLevel;
     }
 }

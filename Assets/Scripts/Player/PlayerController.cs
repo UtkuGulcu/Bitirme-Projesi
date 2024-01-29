@@ -175,4 +175,9 @@ public class PlayerController : MonoBehaviour
     {
         return direction;
     }
+
+    public void SetMovementSpeed(float newMovementSpeed)
+    {
+        maxMovementSpeed = newMovementSpeed;
+    }
 }

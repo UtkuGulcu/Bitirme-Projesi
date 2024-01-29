@@ -127,8 +127,15 @@ public static class LobbyPreferences
                 return;
             }
         }
-        
-        SceneLoader.LoadNextScene();
+
+        if (LobbyUI.Instance.GetSelectedLevel() == LobbyUI.Level.Arena)
+        {
+            SceneLoader.LoadArenaLevel();
+        }
+        else
+        {
+            SceneLoader.LoadSpaceLevel();
+        }
     }
 
     public static void ClearMemory()

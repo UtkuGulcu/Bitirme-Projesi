@@ -10,6 +10,16 @@ public static class SceneLoader
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public static void LoadSpaceLevel()
+    {
+        SceneManager.LoadScene(3);
+    }
+    
+    public static void LoadArenaLevel()
+    {
+        SceneManager.LoadScene(2);
+    }
+
     public static void LoadMainMenu()
     {
         SceneManager.LoadScene(0);

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a86a614399a44be43ac21a948ac39cd3, type: 3}
+  m_Name: Sound Effect References
+  m_EditorClassIdentifier: 
+  weaponPickup: {fileID: 8300000, guid: 858d0d815cd509e4dbc9516d583539b7, type: 3}
+  winScreen: {fileID: 8300000, guid: 0876fa87feb38c143b342d2662e5eadb, type: 3}
+  speedPickup: {fileID: 8300000, guid: ea9079200fe5fcf4eb1b1f2dcb7b7ef0, type: 3}
+  shieldPickup: {fileID: 8300000, guid: af0ef68c60b4395469435d28bb66676e, type: 3}
+  healthPickup: {fileID: 8300000, guid: a03afbb8db39de14f8ad241bdc5ce1dd, type: 3}
+  revolverShoot: {fileID: 8300000, guid: cf10038e99307e74489eb55beb651a07, type: 3}
+  fullAutoShoot: {fileID: 8300000, guid: 899e3f323d5eea64abc477c795d4c722, type: 3}
+  sniperShoot: {fileID: 8300000, guid: 23442216ad81c194ba73a33b17da4045, type: 3}
+  uziShoot: {fileID: 8300000, guid: a44763f479f7d6646a9d75af4de30d01, type: 3}

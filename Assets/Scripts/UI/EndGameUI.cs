@@ -36,6 +36,7 @@ public class EndGameUI : MonoBehaviour
 
     public void ShowEndGameScreen(object sender, object data)
     {
+        
         string winnerTeamName = data as string;
         winnerTeamName = winnerTeamName.ToUpper();
         

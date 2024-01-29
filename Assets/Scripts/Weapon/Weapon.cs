@@ -9,6 +9,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private WeaponSO weaponData;
     [SerializeField] private Transform barrelTransform;
     [SerializeField] private WeaponAnimation weaponAnimation;
+    [SerializeField] private GameEventSO OnWeaponShot;
 
     private Player player;
     private float nextFireTime;
@@ -33,6 +34,8 @@ public class Weapon : MonoBehaviour
         GameObject spawnedObject = Instantiate(weaponData.bulletPrefab, barrelTransform.position, Quaternion.identity);
         Bullet bullet = spawnedObject.GetComponent<Bullet>();
         bullet.Setup(direction, weaponData, team);
+        
+        OnWeaponShot.Raise(this, weaponData.weaponName);
 
         if (!weaponData.hasUnlimitedAmmo)
         {
