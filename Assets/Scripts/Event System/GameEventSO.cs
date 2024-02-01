@@ -5,7 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Scriptable Objects/Game Event")]
 public class GameEventSO : ScriptableObject
 {
-    private List<GameEventListener> listenerList = new List<GameEventListener>();
+    [HideInInspector]
+    public List<GameEventListener> listenerList = new List<GameEventListener>();
 
     public void Raise(object sender, object data)
     {
