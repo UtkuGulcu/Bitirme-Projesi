@@ -41,7 +41,7 @@ public class LobbyUI : MonoBehaviour
 
     private void Update()
     {
-        if (Keyboard.current.tabKey.wasPressedThisFrame || Gamepad.current.buttonNorth.wasPressedThisFrame)
+        if (Keyboard.current.tabKey.wasPressedThisFrame || (Gamepad.current != null && Gamepad.current.buttonNorth.wasPressedThisFrame))
         {
             ChangeMapFrame();
         }
