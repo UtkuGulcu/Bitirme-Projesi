@@ -10,6 +10,7 @@ public class PlayerManager : MonoBehaviour
     public struct PlayerData
     {
         public InputDevice inputDevice;
+        public bool isSecondKeyboard;
         public int playerID;
         public GameObject prefab;
         public LobbyPreferences.PlayerPreferences.Team team;
@@ -27,6 +28,10 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private Transform[] spawnPositionTransformArray;
     [SerializeField] private TeamColorsSO teamColorsSO;
 
+    private const string FIRST_KEYBOARD_CONTROL_SCHEME_KEY = "First Keyboard";
+    private const string SECOND_KEYBOARD_CONTROL_SCHEME_KEY = "Second Keyboard";
+    private const string GAMEPAD_CONTROL_SCHEME_KEY = "Gamepad";
+    
     private Dictionary<int, PlayerData> playerDataDictionary;
     private int currentID;
 
@@ -55,7 +60,8 @@ public class PlayerManager : MonoBehaviour
             
             var playerData = new PlayerData
             {
-                inputDevice = playerPreference.inputDevice,
+                inputDevice = playerPreference.inputDeviceData.inputDevice,
+                isSecondKeyboard = playerPreference.inputDeviceData.isSecondKeyboard,
                 playerID = currentID,
                 prefab = playerPreference.playerPrefab,
                 team = playerPreference.team,
@@ -156,7 +162,20 @@ public class PlayerManager : MonoBehaviour
         GameObject spawnedObject = Instantiate(selectedPrefab, selectedSpawnPositionTransform.position, Quaternion.identity);
 
         PlayerInput playerInput = spawnedObject.GetComponent<PlayerInput>();
-        playerInput.SwitchCurrentControlScheme(playerData.inputDevice);
+        //playerInput.SwitchCurrentControlScheme(playerData.inputDevice);
+
+        if (playerData is { inputDevice: Keyboard, isSecondKeyboard: false })
+        {
+            playerInput.SwitchCurrentControlScheme(FIRST_KEYBOARD_CONTROL_SCHEME_KEY, playerData.inputDevice);
+        }
+        else if (playerData.inputDevice is Keyboard)
+        {
+            playerInput.SwitchCurrentControlScheme(SECOND_KEYBOARD_CONTROL_SCHEME_KEY, playerData.inputDevice);
+        }
+        else
+        {
+            playerInput.SwitchCurrentControlScheme(GAMEPAD_CONTROL_SCHEME_KEY, playerData.inputDevice);
+        }
 
         Player player = spawnedObject.GetComponent<Player>();
         player.SetPlayerData(playerData.playerID, playerData.team);

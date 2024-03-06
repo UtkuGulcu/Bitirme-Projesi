@@ -27,7 +27,7 @@ public class EndGameUI : MonoBehaviour
             return;
         }
         
-        if (Gamepad.current.buttonEast.wasPressedThisFrame || Keyboard.current.escapeKey.wasPressedThisFrame)
+        if (Gamepad.current?.buttonEast.wasPressedThisFrame ?? Keyboard.current.escapeKey.wasPressedThisFrame)
         {
             Time.timeScale = 1;
             SceneLoader.LoadMainMenu();

@@ -49,11 +49,17 @@ public class LobbyUI : MonoBehaviour
 
     public void EnableFrame(object sender, object data)
     {
-        var inputDevice = data as InputDevice;
+        var args = data as GameEventArgs.InputDeviceEventArgs;
 
+        var inputDeviceData = new LobbyPreferences.PlayerPreferences.InputDeviceData
+        {
+            inputDevice = args.inputDevice,
+            isSecondKeyboard = args.isSecondKeyboard
+        };
+        
         var frameData = new LobbyFrameSingleUI.FrameData
         {
-            inputDevice = inputDevice,
+            inputDeviceData = inputDeviceData,
             color = teamColorsSO.GetDefaultColor(),
             characterSprite = characterDataSO.GetDefaultCharacterSprite()
         };
@@ -61,7 +67,7 @@ public class LobbyUI : MonoBehaviour
         frameArray[nextAvailableIndex].EnableActiveState(frameData);
         nextAvailableIndex++;
         
-        if (inputDevice is Keyboard)
+        if (inputDeviceData.inputDevice is Keyboard)
         {
             UpdatePassiveStateOfFrames();
         }
@@ -69,15 +75,16 @@ public class LobbyUI : MonoBehaviour
 
     public void DisableFrame(object sender, object data)
     {
-        nextAvailableIndex--;
-        var inputDevice = data as InputDevice;
+        var args = data as GameEventArgs.InputDeviceEventArgs;
         
-        if (inputDevice is Keyboard)
+        nextAvailableIndex--;
+        
+        if (args.inputDevice is Keyboard)
         {
             UpdatePassiveStateOfFrames();
         }
         
-        int disabledFrameIndex = FindIndexOfFrame(inputDevice);
+        int disabledFrameIndex = FindIndexOfFrame(args.inputDevice, args.isSecondKeyboard);
 
         for (int i = 0; i < frameArray.Length; i++)
         {
@@ -116,14 +123,16 @@ public class LobbyUI : MonoBehaviour
 
     public void ChangeTeamOfFrame(object sender, object data)
     {
-        LobbyFrameSingleUI frameSingleWithInputDevice = FindFrameWithInputDevice(data as InputDevice);
+        var args = data as GameEventArgs.InputDeviceEventArgs;
+        
+        LobbyFrameSingleUI frameSingleWithInputDevice = FindFrameWithInputDevice(args.inputDevice, args.isSecondKeyboard);
         frameSingleWithInputDevice.ChangeTeam(teamColorsSO);
     }
 
     public void ChangeSkinOfFrame(object sender, object data)
     {
         var args = data as GameEventArgs.OnPlayerChangedSkinEventArgs;
-        LobbyFrameSingleUI frameSingleWithInputDevice = FindFrameWithInputDevice(args.inputDevice);
+        LobbyFrameSingleUI frameSingleWithInputDevice = FindFrameWithInputDevice(args.inputDevice, args.isSecondKeyboard);
 
         if (args.hasSwitchedToNextSkin)
         {
@@ -138,23 +147,27 @@ public class LobbyUI : MonoBehaviour
 
     public void SetFrameReady(object sender, object data)
     {
-        LobbyFrameSingleUI frameSingleWithInputDevice = FindFrameWithInputDevice(data as InputDevice);
+        var args = data as GameEventArgs.InputDeviceEventArgs;
+
+        LobbyFrameSingleUI frameSingleWithInputDevice = FindFrameWithInputDevice(args.inputDevice, args.isSecondKeyboard);
         frameSingleWithInputDevice.EnableReadyVisual();
     }
     
     public void SetFrameNotReady(object sender, object data)
     {
-        LobbyFrameSingleUI frameSingleWithInputDevice = FindFrameWithInputDevice(data as InputDevice);
+        var args = data as GameEventArgs.InputDeviceEventArgs;
+        
+        LobbyFrameSingleUI frameSingleWithInputDevice = FindFrameWithInputDevice(args.inputDevice, args.isSecondKeyboard);
         frameSingleWithInputDevice.DisableReadyVisual();
     }
 
-    private LobbyFrameSingleUI FindFrameWithInputDevice(InputDevice inputDevice)
+    private LobbyFrameSingleUI FindFrameWithInputDevice(InputDevice inputDevice, bool isSecondKeyboard = false)
     {
         LobbyFrameSingleUI tempFrameSingle = null;
         
         foreach (var frame in frameArray)
         {
-            if (frame.IsValidFrame(inputDevice))
+            if (frame.IsValidFrame(inputDevice, isSecondKeyboard))
             {
                 tempFrameSingle = frame;
                 break;
@@ -164,11 +177,11 @@ public class LobbyUI : MonoBehaviour
         return tempFrameSingle;
     }
 
-    private int FindIndexOfFrame(InputDevice inputDevice)
+    private int FindIndexOfFrame(InputDevice inputDevice, bool isSecondKeyboard = false)
     {
         foreach (var frame in frameArray)
         {
-            if (frame.IsValidFrame(inputDevice))
+            if (frame.IsValidFrame(inputDevice, isSecondKeyboard))
             {
                 return Array.IndexOf(frameArray, frame);
             }

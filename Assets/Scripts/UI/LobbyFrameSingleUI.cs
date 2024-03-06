@@ -10,7 +10,7 @@ public class LobbyFrameSingleUI : MonoBehaviour
 {
     public class FrameData
     {
-        public InputDevice inputDevice;
+        public LobbyPreferences.PlayerPreferences.InputDeviceData inputDeviceData;
         public Color color;
         public Sprite characterSprite;
     }
@@ -82,9 +82,9 @@ public class LobbyFrameSingleUI : MonoBehaviour
         characterImage.sprite = frameData.characterSprite;
     }
 
-    public bool IsValidFrame(InputDevice inputDevice)
+    public bool IsValidFrame(InputDevice inputDevice, bool isSecondKeyboard = false)
     {
-        return frameData.inputDevice == inputDevice;
+        return frameData.inputDeviceData.inputDevice == inputDevice && frameData.inputDeviceData.isSecondKeyboard == isSecondKeyboard;
     }
 
     public bool IsActive()
@@ -107,32 +107,6 @@ public class LobbyFrameSingleUI : MonoBehaviour
         return frameData;
     }
 
-    // public void EnablePassiveStateWithKeyboardIcon()
-    // {
-    //     if (isActive)
-    //     {
-    //         return;
-    //     }
-    //
-    //     passiveStateWithEnterGameObjects.SetActive(true);
-    //     
-    //     passiveStateWithoutEnterGameObjects.SetActive(false);
-    //     activeStateGameObjects.SetActive(false);
-    // }
-    //
-    // public void EnablePassiveStateWithoutKeyboardIcon()
-    // {
-    //     if (isActive)
-    //     {
-    //         return;
-    //     }
-    //
-    //     passiveStateWithoutEnterGameObjects.SetActive(true);
-    //     
-    //     passiveStateWithEnterGameObjects.SetActive(false);
-    //     activeStateGameObjects.SetActive(false);
-    // }
-
     public void UpdatePassiveState()
     {
         if (isActive)
@@ -142,7 +116,7 @@ public class LobbyFrameSingleUI : MonoBehaviour
         
         activeStateGameObjects.SetActive(false);
         
-        if (LobbyManager.Instance.IsKeyboardRegistered())
+        if (LobbyPreferences.IsAnyKeyboardRegistered())
         {
             passiveStateWithEnterGameObjects.SetActive(false);
             passiveStateWithoutEnterGameObjects.SetActive(true);

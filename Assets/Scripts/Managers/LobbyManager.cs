@@ -19,9 +19,6 @@ public class LobbyManager : MonoBehaviour
     
     public static LobbyManager Instance { get; private set; }
 
-    private Keyboard keyboard;
-    private List<Gamepad> joinedGamepadList = new();
-
     private void Awake()
     {
         if (Instance == null)
@@ -42,201 +39,203 @@ public class LobbyManager : MonoBehaviour
 
     private void Update()
     {
-        if (keyboard == null)
+        ReadKeyboardInput();
+        ReadGamepadInput();
+    }
+
+    private void ReadKeyboardInput()
+    {
+        if (Keyboard.current.enterKey.wasPressedThisFrame)
         {
-            ReadUnregisteredKeyboardInput();
+            bool isJoined = LobbyPreferences.IsDeviceRegistered(Keyboard.current);
+            HandleSubmitKeyInput(isJoined, Keyboard.current);
         }
-        else
+
+        if (Keyboard.current.rightShiftKey.wasPressedThisFrame)
         {
-            ReadRegisteredKeyboardInput();
+            bool isJoined = LobbyPreferences.IsDeviceRegistered(Keyboard.current, true);
+            HandleSubmitKeyInput(isJoined, Keyboard.current, true);
         }
         
-        var gamepad = Gamepad.current;
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            bool isJoined = LobbyPreferences.IsDeviceRegistered(Keyboard.current);
+            HandleCancelKeyInput(isJoined, Keyboard.current);
+        }
+        
+        if (Keyboard.current.backspaceKey.wasPressedThisFrame)
+        {
+            bool isJoined = LobbyPreferences.IsDeviceRegistered(Keyboard.current, true);
+            HandleCancelKeyInput(isJoined, Keyboard.current, true);
+        }
+
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            bool isJoined = LobbyPreferences.IsDeviceRegistered(Keyboard.current);
+            HandleChangeTeamInput(isJoined, Keyboard.current);
+        }
+
+        if (Keyboard.current.rightCtrlKey.wasPressedThisFrame)
+        {
+            bool isJoined = LobbyPreferences.IsDeviceRegistered(Keyboard.current, true);
+            HandleChangeTeamInput(isJoined, Keyboard.current, true);
+        }
+
+        if (Keyboard.current.dKey.wasPressedThisFrame)
+        {
+            bool isJoined = LobbyPreferences.IsDeviceRegistered(Keyboard.current);
+            HandleChangeSkinInput(isJoined,Keyboard.current, true);
+        }
+        
+        if (Keyboard.current.aKey.wasPressedThisFrame)
+        {
+            bool isJoined = LobbyPreferences.IsDeviceRegistered(Keyboard.current);
+            HandleChangeSkinInput(isJoined, Keyboard.current, false);
+        }
+
+        if (Keyboard.current.rightArrowKey.wasPressedThisFrame)
+        {
+            bool isJoined = LobbyPreferences.IsDeviceRegistered(Keyboard.current, true);
+            HandleChangeSkinInput(isJoined, Keyboard.current, true, true);
+        }
+        
+        if (Keyboard.current.leftArrowKey.wasPressedThisFrame)
+        {
+            bool isJoined = LobbyPreferences.IsDeviceRegistered(Keyboard.current, true);
+            HandleChangeSkinInput(isJoined, Keyboard.current, false, true);
+        }
+    }
+
+    private void ReadGamepadInput()
+    {
+        Gamepad gamepad = Gamepad.current;
 
         if (gamepad == null)
         {
             return;
         }
 
-        if (IsGamepadRegistered(gamepad))
+        if (gamepad.buttonSouth.wasPressedThisFrame)
         {
-            ReadRegisteredGamepadInput();
-        }
-        else
-        {
-            ReadUnregisteredGamepadInput();
-        }
-    }
-
-    private void ReadUnregisteredKeyboardInput()
-    {
-        if (Keyboard.current.escapeKey.wasPressedThisFrame)
-        {
-            SceneLoader.LoadMainMenu();
-        }
-
-        if (Keyboard.current.enterKey.wasPressedThisFrame && CanJoin() && LobbyPreferences.TryToAddDevice(Keyboard.current, characterData.GetDefaultSkinPrefab(), characterData.GetDefaultPortraitSprite()))
-        {
-            keyboard = Keyboard.current;
-            OnPlayerJoined.Raise(this, keyboard);
-        }
-    }
-
-    private void ReadRegisteredKeyboardInput()
-    {
-        if (keyboard.spaceKey.wasPressedThisFrame)
-        {
-            LobbyPreferences.ChangeTeamOfPlayer(keyboard);
-            OnPlayerChangedTeam.Raise(this, keyboard);
-        }
-
-        if (keyboard.rightArrowKey.wasPressedThisFrame)
-        {
-            GameObject currentPrefab = LobbyPreferences.GetPrefabOfPlayer(keyboard);
-            Sprite currentSprite = LobbyPreferences.GetPortraitOfPlayer(keyboard);
-
-            GameObject nextPrefab = characterData.GetNextPrefab(currentPrefab);
-            Sprite nextSprite = characterData.GetNextPortraitSprite(currentSprite);
-            
-            LobbyPreferences.ChangeSkinOfPlayer(keyboard, nextPrefab, nextSprite);
-
-            var onPlayerChangedSkinEventArgs = GameEventArgs.GetOnPlayerChangedSkinEventArgs(true, keyboard);
-            OnPlayerChangedSkin.Raise(this,onPlayerChangedSkinEventArgs);
-        }
-
-        if (keyboard.leftArrowKey.wasPressedThisFrame)
-        {
-            GameObject currentPrefab = LobbyPreferences.GetPrefabOfPlayer(keyboard);
-            Sprite currentSprite = LobbyPreferences.GetPortraitOfPlayer(keyboard);
-            
-            GameObject previousPrefab = characterData.GetPreviousPrefab(currentPrefab);
-            Sprite previousSprite = characterData.GetPreviousPortraitSprite(currentSprite);
-            
-            LobbyPreferences.ChangeSkinOfPlayer(keyboard, previousPrefab, previousSprite);
-                
-            var onPlayerChangedSkinEventArgs = GameEventArgs.GetOnPlayerChangedSkinEventArgs(false, keyboard);
-            OnPlayerChangedSkin.Raise(this,onPlayerChangedSkinEventArgs);
-        }
-
-        if (keyboard.enterKey.wasPressedThisFrame)
-        {
-            LobbyPreferences.SetPlayerReady(keyboard);
-            OnPlayerSetReady.Raise(this, keyboard);
-        }
-
-        if (keyboard.escapeKey.wasPressedThisFrame && LobbyPreferences.IsPlayerReady(keyboard))
-        {
-            StartCoroutine(LobbyPreferences.SetPlayerNotReady(keyboard));
-            OnPlayerSetNotReady.Raise(this, keyboard);
-        }
-
-        if (keyboard.escapeKey.wasPressedThisFrame && !LobbyPreferences.IsPlayerReady(keyboard))
-        {
-            var tempKeyboard = keyboard;
-            keyboard = null;
-            
-            LobbyPreferences.DeletePlayerPreferences(tempKeyboard);
-            OnPlayerLeft.Raise(this, tempKeyboard);
-        }
-    }
-
-    private void ReadRegisteredGamepadInput()
-    {
-        for (int i = joinedGamepadList.Count - 1; i >= 0; i--)
-        {
-            Gamepad gamepad = joinedGamepadList[i];
-            
-            if (gamepad.buttonWest.wasPressedThisFrame)
-            {
-                LobbyPreferences.ChangeTeamOfPlayer(gamepad);
-                OnPlayerChangedTeam.Raise(this, gamepad);
-            }
-
-            if (gamepad.leftStick.right.wasPressedThisFrame)
-            {
-                GameObject currentPrefab = LobbyPreferences.GetPrefabOfPlayer(gamepad);
-                Sprite currentSprite = LobbyPreferences.GetPortraitOfPlayer(gamepad);
-
-                GameObject nextPrefab = characterData.GetNextPrefab(currentPrefab);
-                Sprite nextSprite = characterData.GetNextPortraitSprite(currentSprite);
-            
-                LobbyPreferences.ChangeSkinOfPlayer(gamepad, nextPrefab, nextSprite);
-
-                var onPlayerChangedSkinEventArgs = GameEventArgs.GetOnPlayerChangedSkinEventArgs(true, gamepad);
-                OnPlayerChangedSkin.Raise(this,onPlayerChangedSkinEventArgs);
-            }
-            
-            if (gamepad.leftStick.left.wasPressedThisFrame)
-            {
-                GameObject currentPrefab = LobbyPreferences.GetPrefabOfPlayer(gamepad);
-                Sprite currentSprite = LobbyPreferences.GetPortraitOfPlayer(gamepad);
-            
-                GameObject previousPrefab = characterData.GetPreviousPrefab(currentPrefab);
-                Sprite previousSprite = characterData.GetPreviousPortraitSprite(currentSprite);
-            
-                LobbyPreferences.ChangeSkinOfPlayer(gamepad, previousPrefab, previousSprite);
-                
-                var onPlayerChangedSkinEventArgs = GameEventArgs.GetOnPlayerChangedSkinEventArgs(false, gamepad);
-                OnPlayerChangedSkin.Raise(this,onPlayerChangedSkinEventArgs);
-            }
-
-            if (gamepad.buttonSouth.wasPressedThisFrame)
-            {
-                LobbyPreferences.SetPlayerReady(gamepad);
-                OnPlayerSetReady.Raise(this, gamepad);
-            }
-
-            if (gamepad.buttonEast.wasPressedThisFrame && LobbyPreferences.IsPlayerReady(gamepad))
-            {
-                StartCoroutine(LobbyPreferences.SetPlayerNotReady(gamepad));
-                OnPlayerSetNotReady.Raise(this, gamepad);
-            }
-            
-            if (gamepad.buttonEast.wasPressedThisFrame && !LobbyPreferences.IsPlayerReady(gamepad))
-            {
-                OnPlayerLeft.Raise(this, gamepad);
-                LobbyPreferences.DeletePlayerPreferences(gamepad);
-                joinedGamepadList.Remove(gamepad);
-            }
-        }
-    }
-
-    private void ReadUnregisteredGamepadInput()
-    {
-        var gamepad = Gamepad.current;
-
-        if (gamepad == null || IsGamepadRegistered(gamepad))
-        {
-            return;
+            bool isJoined = LobbyPreferences.IsDeviceRegistered(gamepad);
+            HandleSubmitKeyInput(isJoined, gamepad);
         }
         
         if (gamepad.buttonEast.wasPressedThisFrame)
         {
-            SceneLoader.LoadMainMenu();
+            bool isJoined = LobbyPreferences.IsDeviceRegistered(gamepad);
+            HandleCancelKeyInput(isJoined, gamepad);
         }
 
-        if (gamepad.buttonSouth.wasPressedThisFrame && CanJoin() && LobbyPreferences.TryToAddDevice(gamepad, characterData.GetDefaultSkinPrefab(), characterData.GetDefaultPortraitSprite()))
+        if (gamepad.buttonWest.wasPressedThisFrame)
         {
-            joinedGamepadList.Add(gamepad);
-            OnPlayerJoined.Raise(this, gamepad);
+            bool isJoined = LobbyPreferences.IsDeviceRegistered(gamepad);
+            HandleChangeTeamInput(isJoined, gamepad);
+        }
+
+        if (gamepad.leftStick.left.wasPressedThisFrame)
+        {
+            bool isJoined = LobbyPreferences.IsDeviceRegistered(gamepad);
+            HandleChangeSkinInput(isJoined, gamepad, false);
+        }
+
+        if (gamepad.leftStick.right.wasPressedThisFrame)
+        {
+            bool isJoined = LobbyPreferences.IsDeviceRegistered(gamepad);
+            HandleChangeSkinInput(isJoined, gamepad, true);
         }
     }
 
-    private bool CanJoin()
+    private void HandleSubmitKeyInput(bool isJoined, InputDevice inputDevice, bool isSecondKeyboard = false)
     {
-        bool canJoin = (keyboard == null && joinedGamepadList.Count < 4) ||
-                       (keyboard != null && joinedGamepadList.Count < 3);
+        switch (isJoined)
+        {
+            case false when CanJoin():
+                LobbyPreferences.AddDevice(inputDevice, characterData.GetDefaultSkinPrefab(), characterData.GetDefaultPortraitSprite(), isSecondKeyboard);
+                
+                var onPlayerJoinedEventArgs = GameEventArgs.GetInputDeviceEventArgs(inputDevice, isSecondKeyboard);
+                OnPlayerJoined.Raise(this, onPlayerJoinedEventArgs);
+                break;
+            
+            case true:
+                LobbyPreferences.SetPlayerReady(inputDevice, isSecondKeyboard);
+                
+                var onPlayerSetReadyEventArgs = GameEventArgs.GetInputDeviceEventArgs(inputDevice, isSecondKeyboard);
+                OnPlayerSetReady.Raise(this, onPlayerSetReadyEventArgs);
+                break;
+        }
+    }
 
-        return canJoin;
+    private void HandleCancelKeyInput(bool isJoined, InputDevice inputDevice, bool isSecondKeyboard = false)
+    {
+        switch (isJoined)
+        {
+            case false:
+                SceneLoader.LoadMainMenu();
+                break;
+            
+            case true when LobbyPreferences.IsPlayerReady(inputDevice, isSecondKeyboard):
+                StartCoroutine(LobbyPreferences.SetPlayerNotReady(inputDevice));
+                
+                var onPlayerSetNotReadyEventArgs = GameEventArgs.GetInputDeviceEventArgs(inputDevice, isSecondKeyboard);
+                OnPlayerSetNotReady.Raise(this, onPlayerSetNotReadyEventArgs);
+                break;
+            
+            case true when !LobbyPreferences.IsPlayerReady(inputDevice, isSecondKeyboard):
+                LobbyPreferences.DeletePlayerPreferences(inputDevice, isSecondKeyboard);
+                
+                var onPlayerLeftEventArgs = GameEventArgs.GetInputDeviceEventArgs(inputDevice, isSecondKeyboard);
+                OnPlayerLeft.Raise(this, onPlayerLeftEventArgs);
+                break;
+        }
+    }
+
+    private void HandleChangeTeamInput(bool isJoined, InputDevice inputDevice, bool isSecondKeyboard = false)
+    {
+        if (!isJoined)
+        {
+            return;
+        }
+        
+        LobbyPreferences.ChangeTeamOfPlayer(inputDevice, isSecondKeyboard);
+        
+        var onPlayerChangedTeamEventArgs = GameEventArgs.GetInputDeviceEventArgs(inputDevice, isSecondKeyboard);
+        OnPlayerChangedTeam.Raise(this, onPlayerChangedTeamEventArgs);
+    }
+
+    private void HandleChangeSkinInput(bool isJoined, InputDevice inputDevice, bool hasSwitchedToNextSkin, bool isSecondKeyboard = false)
+    {
+        if (!isJoined)
+        {
+            return;
+        }
+        
+        GameObject currentPrefab = LobbyPreferences.GetPrefabOfPlayer(inputDevice, isSecondKeyboard);
+        Sprite currentSprite = LobbyPreferences.GetPortraitOfPlayer(inputDevice, isSecondKeyboard);
+
+        GameObject newPrefab;
+        Sprite newSprite;
+        
+        if (hasSwitchedToNextSkin)
+        {
+            newPrefab = characterData.GetNextPrefab(currentPrefab);
+            newSprite = characterData.GetNextPortraitSprite(currentSprite);
+        }
+        else
+        {
+            newPrefab = characterData.GetPreviousPrefab(currentPrefab);
+            newSprite = characterData.GetPreviousPortraitSprite(currentSprite);
+        }
+        
+        LobbyPreferences.ChangeSkinOfPlayer(inputDevice, newPrefab, newSprite, isSecondKeyboard);
+
+        var onPlayerChangedSkinEventArgs = GameEventArgs.GetOnPlayerChangedSkinEventArgs(hasSwitchedToNextSkin, inputDevice, isSecondKeyboard);
+        OnPlayerChangedSkin.Raise(this,onPlayerChangedSkinEventArgs);
     }
     
-    private bool IsGamepadRegistered(Gamepad gamepad)
+    
+    private bool CanJoin()
     {
-        return joinedGamepadList.Contains(gamepad);
-    }
-
-    public bool IsKeyboardRegistered()
-    {
-        return keyboard != null;
+        return LobbyPreferences.GetPlayerCount() < 4;
     }
 }

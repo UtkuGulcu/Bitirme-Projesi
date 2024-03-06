@@ -22,6 +22,13 @@ public static class GameEventArgs
     {
         public bool hasSwitchedToNextSkin;
         public InputDevice inputDevice;
+        public bool isSecondKeyboard;
+    }
+
+    public class InputDeviceEventArgs
+    {
+        public InputDevice inputDevice;
+        public bool isSecondKeyboard;
     }
 
     public static OnWeaponPickedEventArgs GetOnWeaponPickedEventArgs(int playerID, string weaponName, int ammo)
@@ -47,14 +54,26 @@ public static class GameEventArgs
         return onShotFiredEventArgs;
     }
 
-    public static OnPlayerChangedSkinEventArgs GetOnPlayerChangedSkinEventArgs(bool hasSwitchedToNextSkin, InputDevice inputDevice)
+    public static OnPlayerChangedSkinEventArgs GetOnPlayerChangedSkinEventArgs(bool hasSwitchedToNextSkin, InputDevice inputDevice, bool isSecondKeyboard = false)
     {
         var onPlayerChangedSkinEventArgs = new OnPlayerChangedSkinEventArgs
         {
             hasSwitchedToNextSkin = hasSwitchedToNextSkin,
-            inputDevice = inputDevice
+            inputDevice = inputDevice,
+            isSecondKeyboard = isSecondKeyboard
         };
 
         return onPlayerChangedSkinEventArgs;
+    }
+
+    public static InputDeviceEventArgs GetInputDeviceEventArgs(InputDevice inputDevice, bool isSecondKeyboard = false)
+    {
+        var inputDeviceEventArgs = new InputDeviceEventArgs
+        {
+            inputDevice = inputDevice,
+            isSecondKeyboard = isSecondKeyboard
+        };
+
+        return inputDeviceEventArgs;
     }
 }
