@@ -39,17 +39,17 @@ public class SettingsUI : MonoBehaviour
             return;
         }
         
-        if (Keyboard.current.spaceKey.wasPressedThisFrame || Gamepad.current.buttonWest.wasPressedThisFrame)
+        if (Gamepad.current?.buttonWest.wasPressedThisFrame ?? Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             ToggleSound();
         }
 
-        if (Keyboard.current.tabKey.wasPressedThisFrame || Gamepad.current.buttonNorth.wasPressedThisFrame)
+        if (Gamepad.current?.buttonNorth.wasPressedThisFrame ?? Keyboard.current.tabKey.wasPressedThisFrame)
         {
             ToggleMusic();
         }
         
-        if (Keyboard.current.escapeKey.wasPressedThisFrame || Gamepad.current.buttonEast.wasPressedThisFrame)
+        if (Gamepad.current?.buttonEast.wasPressedThisFrame ?? Keyboard.current.escapeKey.wasPressedThisFrame)
         {
             DisableVisual();
         }
